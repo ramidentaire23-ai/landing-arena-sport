@@ -240,12 +240,15 @@
         document.getElementById('summaryDeliveryType').textContent = order.deliveryType === 'desk' ? 'توصيل لمكتب الشحن (Stop Desk)' : 'توصيل للمنزل (Domicile)';
         document.getElementById('summaryTotal').textContent = `DA ${order.totalAmount}`;
 
-        // Bouton WhatsApp officiel ARENA SPORT
-        const phoneStore = "213784145924";
+        // Bouton WhatsApp officiel ARENA SPORT (+213 663407015)
+        const phoneStore = "213663407015";
         const textMsg = encodeURIComponent(`مرحباً ARENA SPORT، أود تأكيد طلبيتي رقم ${order.orderId} الخاصة بنظارة الرياضة (${order.variantName}).\nالاسم: ${order.clientName}\nالولاية: ${order.wilayaName}\nالمبلغ: ${order.totalAmount} دج`);
         document.getElementById('whatsappBtn').href = `https://wa.me/${phoneStore}?text=${textMsg}`;
       } else {
         document.getElementById('orderRefDisplay').textContent = orderId;
+        const phoneStore = "213663407015";
+        const textMsg = encodeURIComponent(`مرحباً ARENA SPORT، أود تأكيد طلبيتي رقم ${orderId} الخاصة بنظارة الرياضة.`);
+        document.getElementById('whatsappBtn').href = `https://wa.me/${phoneStore}?text=${textMsg}`;
       }
 
       // Meta Pixel Purchase Event (Déduplication garantie par session)
