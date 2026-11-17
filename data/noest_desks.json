@@ -1,0 +1,1699 @@
+{
+  "01A": {
+    "code": "1A",
+    "commune": "Adrar",
+    "name": "Adrar",
+    "address": "Centre-ville, à côté de l’ancien magasin Hadj Grifa, en face du centre commercial, quartier El Hattaba – Adrar",
+    "map": "https://maps.app.goo.gl/2Nrh9EFjphQwNJxXA",
+    "phones": {
+      "0": "0550602181",
+      "1": "0561623531",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "02A": {
+    "code": "2A",
+    "commune": "Chlef",
+    "name": "Chlef",
+    "address": "Rue Lac des Forêts (À côté du CNRC)",
+    "map": "https://maps.app.goo.gl/ej8xXgs4uzC227ke6",
+    "phones": {
+      "0": "0770582116",
+      "1": "0561686360",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "02B": {
+    "code": "2B",
+    "commune": "Tenes",
+    "name": "Chlef «Tenes»",
+    "address": "Rue de Cherchell en face l’école primaire les frères Menad Ténès",
+    "map": "https://maps.app.goo.gl/LAM2QA4ikvbwoKur5",
+    "phones": {
+      "0": "0560469155",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "03A": {
+    "code": "3A",
+    "commune": "Laghouat",
+    "name": "Laghouat",
+    "address": "Quartier El-Wiam – en face de l’Enfance assistée (à 100 m de l’ancien bureau)",
+    "map": "https://maps.app.goo.gl/br2o27a21bSM8DGEA",
+    "phones": {
+      "0": "0550600359",
+      "1": "0770611585",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–13h00 | 17h30–20h00"
+  },
+  "03B": {
+    "code": "3B",
+    "commune": "Aflou",
+    "name": "Laghouat «Aflou»",
+    "address": "Rue Al-Gaada, à côté de la boulangerie Belkhair",
+    "map": "",
+    "phones": {
+      "0": "0550314898",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "04A": {
+    "code": "4A",
+    "commune": "Ainmlila",
+    "name": "Oum El Bouaghi «Ain Mlila»",
+    "address": "Cité El Hanaa, route du Lycée Messas",
+    "map": "https://maps.app.goo.gl/8RwhB9oBaPbKUgvp7",
+    "phones": {
+      "0": "0561848298",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "04B": {
+    "code": "4B",
+    "commune": "Oum El Bouaghi",
+    "name": "Oum El Bouaghi",
+    "address": "Cité 176 logements LSP Batiment 13 – Oum El Bouaghi",
+    "map": "https://maps.app.goo.gl/uNV57wKUxH1g5ZwK8",
+    "phones": {
+      "0": "0561623527",
+      "1": "0560445954",
+      "2": "0540870881",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "04C": {
+    "code": "4C",
+    "commune": "Ain Beida",
+    "name": "Oum El Bouaghi «Aïn El Béïda»",
+    "address": "Aïn Béïda en face C.N.A.S  a coté de Pharmacie Belambri",
+    "map": "https://maps.app.goo.gl/ejzrBevboShW3FEK8",
+    "phones": {
+      "0": "0563026718",
+      "1": "0563026719",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "05A": {
+    "code": "5A",
+    "commune": "Batna",
+    "name": "Batna",
+    "address": "Cité meddour kchida en face les batiments 500",
+    "map": "https://maps.app.goo.gl/vRQhq8fjarcC56N67",
+    "phones": {
+      "0": "0560105318",
+      "1": "0561929074",
+      "2": "0770605118",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "05B": {
+    "code": "5B",
+    "commune": "Barika",
+    "name": "Batna «Barika»",
+    "address": "Quartier CHAABANI , en face notaire Bachir Farhani, a coté Algerie Telecom",
+    "map": "https://maps.app.goo.gl/dKCKkRS6XXreRWki8",
+    "phones": {
+      "0": "0560183389",
+      "1": "0560183413",
+      "2": "0560183206",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "05C": {
+    "code": "5C",
+    "commune": "Tazoult",
+    "name": "Batna",
+    "address": "Cité 1200 logements oulmi en face la nouvelle poste et station pétro baraka",
+    "map": "https://maps.app.goo.gl/xdXTyw2ayFftVFbE7",
+    "phones": {
+      "0": "0563033092",
+      "1": "0563033091",
+      "2": "0770881575",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "06A": {
+    "code": "6A",
+    "commune": "Bejaia",
+    "name": "Bejaïa",
+    "address": "rue des frères Tabet ,a 20 mètres de l'hôtel Golden H en face la nouvelle promotion nid d'abeille.",
+    "map": "https://maps.app.goo.gl/boSD1KK4JWGrN1qM6",
+    "phones": {
+      "0": "0561686346",
+      "1": "0550429286",
+      "2": "0561871121",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "06B": {
+    "code": "6B",
+    "commune": "Akbou",
+    "name": "Bejaïa «Akbou»",
+    "address": "Rue hibouche – arafou En face de djurdjura cars et alliance assurance",
+    "map": "https://maps.app.goo.gl/viKPQgksLQ26xPVd8",
+    "phones": {
+      "0": "0555589102",
+      "1": "0555589207",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "06C": {
+    "code": "6C",
+    "commune": "El Kseur",
+    "name": "Bejaïa «El-Kseur»",
+    "address": "Rue hamaoui hamid commune El-Kseur, bejaia | Repère: local en face la sempac el-kseur",
+    "map": "https://maps.app.goo.gl/2zADgaMghSCzZhKD6",
+    "phones": {
+      "0": "0563026724",
+      "1": "0563026713",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "07A": {
+    "code": "7A",
+    "commune": "Biskra",
+    "name": "Biskra",
+    "address": "N° 05, cité elboustène,(Hai ELmodjahidine) en face du Centre de formation et de d'intervention rapide de la police",
+    "map": "https://maps.app.goo.gl/nouoHiui3pgfgNZH6",
+    "phones": {
+      "0": "0770608890",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "08A": {
+    "code": "8A",
+    "commune": "Bechar",
+    "name": "Béchar",
+    "address": "Cité 622 Logement Al Badr N°02 - Bloc 52 (derière la radio EL SAOURA / En face la protection civile)",
+    "map": "https://maps.app.goo.gl/W6zQbC9oQnMk6Kcm9",
+    "phones": {
+      "0": "0561686335",
+      "1": "0550429404",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "09A": {
+    "code": "9A",
+    "commune": "Blida",
+    "name": "Blida",
+    "address": "El ramoule à côté de la nouvelle gare routière",
+    "map": "https://maps.app.goo.gl/cNpbAjGRrumo5EDi6",
+    "phones": {
+      "0": "0561686325",
+      "1": "0550600998",
+      "2": "0561638691",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "09B": {
+    "code": "9B",
+    "commune": "Boufarik",
+    "name": "Blida « Boufarik »",
+    "address": "La résidence Belkbir en face la salle des fetes Layalina ",
+    "map": "https://maps.app.goo.gl/JBcTodEusZDZiGRB9",
+    "phones": {
+      "0": "0555589398",
+      "1": "0555589395",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "09C": {
+    "code": "9C",
+    "commune": "Mouzaia",
+    "name": "Blida « Mouzaia »",
+    "address": "54 logements LPP, en face lycée Kacem Nait Kacem, Mouzaia",
+    "map": "https://maps.app.goo.gl/pnnJnpoFayqntLfb9",
+    "phones": {
+      "0": "0560004779",
+      "1": "0560007949",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "10A": {
+    "code": "10A",
+    "commune": "Bouira",
+    "name": "Bouira",
+    "address": "Villa hamzaoui, ammar khodja , bouira",
+    "map": "https://maps.app.goo.gl/bJQYAUTLNyEnhpUA8",
+    "phones": {
+      "0": "0770801024",
+      "1": "0550428219",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "10B": {
+    "code": "10B",
+    "commune": "Lakhdaria",
+    "name": "Bouira « Lakhdaria »",
+    "address": "Route national n°05 projet 55 logts social participatif BT A -lakhdaria – bouira (monté tizi elbir à coté de dépôt de vente Semoule MAMA).",
+    "map": "https://maps.app.goo.gl/ZrDFweGcU63DVjD49",
+    "phones": {
+      "0": "0770170513",
+      "1": "0563026714",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "11A": {
+    "code": "11A",
+    "commune": "Tamanghasset",
+    "name": "Tamanrasset",
+    "address": "Quartier Moulay Omar, derrière le siège de la Daïra, à côté du parking de la Direction des Travaux Publics.",
+    "map": "https://maps.app.goo.gl/ywtejZFLQwgQZCCUA",
+    "phones": {
+      "0": "0561638680",
+      "1": "0560608162",
+      "2": "0770749607",
+      "3": "0770820674"
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "12A": {
+    "code": "12A",
+    "commune": "Tebessa",
+    "name": "Tébessa",
+    "address": "a cote du 2eme commissariat de police et du magasin de meubles REDEL, Tébessa",
+    "map": "https://maps.app.goo.gl/UidJ6oXqYPmC8JbT9",
+    "phones": {
+      "0": "0770613002",
+      "1": "0550602622",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "12B": {
+    "code": "12B",
+    "commune": "Ouenza",
+    "name": "Tebessa « El Ouenza »",
+    "address": "cité EPLF a coté service des eaux ",
+    "map": "https://maps.app.goo.gl/BtzvMx28UeegfNkRA",
+    "phones": {
+      "0": "0560004704",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "12C": {
+    "code": "12C",
+    "commune": "Bir El Ater",
+    "name": "Tébessa « Bir El Ater »",
+    "address": "Route nationale numéro 16 en face la station essence Naftal Bir el Ater",
+    "map": "https://maps.app.goo.gl/TgxxiZZDrGDwgmbj7?g_st=aw",
+    "phones": {
+      "0": "0660411339",
+      "1": "0661418276",
+      "2": "",
+      "3": ""
+    },
+    "email": "Superviseur : rmenas@noest-dz.com | Agent dispatch : szerouana@noest-dz.com",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "13A": {
+    "code": "13A",
+    "commune": "Tlemcen",
+    "name": "Tlemcen",
+    "address": "Les Dhalias 426 El kiffane, tlemcen",
+    "map": "https://maps.app.goo.gl/VdCwkoHHZGabbjfx9",
+    "phones": {
+      "0": "0561660040",
+      "1": "0561808143",
+      "2": "0770750242",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "13B": {
+    "code": "13B",
+    "commune": "Maghnia",
+    "name": "Tlemcen «Maghnia»",
+    "address": "Ouled ben saber, À côté restaurant Rais ",
+    "map": "https://maps.app.goo.gl/bJsoBcyp6G5ydp747",
+    "phones": {
+      "0": "0560851262",
+      "1": "0560857684",
+      "2": "0560912307",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "13C": {
+    "code": "13C",
+    "commune": "Mansourah",
+    "name": "Tlemcen «Mansourah»",
+    "address": "Résidence El Qods Mansourah",
+    "map": "https://maps.app.goo.gl/Zr2M2CyvcHsPZ3xs9?g_st=ac",
+    "phones": {
+      "0": "0560004736",
+      "1": "0560152867",
+      "2": "0560158136",
+      "3": ""
+    },
+    "email": "Superviseur : nguitouni@noest-dz.com | Agent desk : srakhroukh@noest-dz.com",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "14A": {
+    "code": "14A",
+    "commune": "Tiaret",
+    "name": "Tiaret",
+    "address": "Cité 180 logements CNT local 01 N° 63 – Tiaret",
+    "map": "https://maps.app.goo.gl/1LrM2edmMH8mSMnV8",
+    "phones": {
+      "0": "0550429624",
+      "1": "0560350227",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "14B": {
+    "code": "14B",
+    "commune": "Frenda",
+    "name": "Tiaret « Frenda »",
+    "address": "Cité 60 logements D121 GP 82 - Frenda",
+    "map": "https://maps.app.goo.gl/9pvEUxbXywsyPuzV7",
+    "phones": {
+      "0": "0560265156",
+      "1": "0560265357",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "14C": {
+    "code": "14C",
+    "commune": "Ksar Chellala",
+    "name": "Tiaret «Ksar Chellala»",
+    "address": "Cité Houcine Aït Ahmed, n° 17, Commune de Ksar Chellala, Wilaya de Tiaret, à côté de la mosquée Imam Ali Ibnou Abi Taleb",
+    "map": "https://www.google.com/maps?q=35.2121,2.3166",
+    "phones": {
+      "0": "0674590783",
+      "1": "0674195290",
+      "2": "0540489757",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "15A": {
+    "code": "15A",
+    "commune": "Tizi Ouzou",
+    "name": "Tizi Ouzou",
+    "address": "Cité 450 Logements, Nouvelle Ville enface la salle des fetes lilya",
+    "map": "https://maps.app.goo.gl/rUxomC9VwyAd4MS16",
+    "phones": {
+      "0": "0561623528",
+      "1": "0550429176",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "15B": {
+    "code": "15B",
+    "commune": "Azazga",
+    "name": "Tizi Ouzou «Azazga»",
+    "address": "Route nationale N= 12 taddart",
+    "map": "https://maps.app.goo.gl/PD37mvfqqr1NXkDy8",
+    "phones": {
+      "0": "0561906076",
+      "1": "0561906289",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "15C": {
+    "code": "15C",
+    "commune": "Draa Ben Khedda",
+    "name": "Tizi Ouzou «Draa Ben Khedda»",
+    "address": "cooperative -EL WOOROUD, EN FACE A.D.E et ANEM de draa-ben khedda",
+    "map": "https://maps.app.goo.gl/GXGzTN7o7jZHCoa58",
+    "phones": {
+      "0": "0770127536",
+      "1": "0770127817",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16A": {
+    "code": "16A",
+    "commune": "Bir Mourad Rais",
+    "name": "Alger « Bir mourad Rais »",
+    "address": "02, Lotissement Beau Séjour, Bir Mourad Raïs",
+    "map": "https://maps.app.goo.gl/B1hsjSttffH5GSQK9",
+    "phones": {
+      "0": "0770610277",
+      "1": "0560158799",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16B": {
+    "code": "16B",
+    "commune": "Bab Azzouar",
+    "name": "Alger « Bab Ezzouar »",
+    "address": "Devant clinique médicale, En face Ecole Hilal School",
+    "map": "https://maps.app.goo.gl/qG22tYtJ4WuWX6W6A",
+    "phones": {
+      "0": "0560301762",
+      "1": "0770608746",
+      "2": "0770615054",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16C": {
+    "code": "16C",
+    "commune": "Cheraga",
+    "name": "Alger « Chéraga »",
+    "address": "Place Iben Badis N° 03 - RDC , Chéraga",
+    "map": "https://maps.app.goo.gl/qLBhYaVRskR6K7XN9",
+    "phones": {
+      "0": "0560846037",
+      "1": "0560812936",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16D": {
+    "code": "16D",
+    "commune": "Reghaia",
+    "name": "Alger « Reghaia »",
+    "address": "822 Logmts LPP Amirouche Batiment A7 N°04 rez-de-chaussée ,Reghaia",
+    "map": "https://maps.app.goo.gl/HC8KvHRuviDoZj6h8",
+    "phones": {
+      "0": "0560441770",
+      "1": "0560441926",
+      "2": "0561680248",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16E": {
+    "code": "16E",
+    "commune": "Alger Centre",
+    "name": "Alger « Centre - Sacré-Cœur »",
+    "address": "22 Rue Hocine BELADJEL, Sacré-Cœur, Alger Centre, (En face la banque BADR)",
+    "map": "https://maps.app.goo.gl/TXhvnMmKxGW4qMxs7",
+    "phones": {
+      "0": "0560181237",
+      "1": "0560181433",
+      "2": "0560181730",
+      "3": "0560181471"
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16F": {
+    "code": "16F",
+    "commune": "Baba Hassen",
+    "name": "Alger « Baba Hassen »",
+    "address": "Cité Cherchali Boualam, À côté de croissant rouge, Baba Hassen",
+    "map": "https://maps.app.goo.gl/EdXbRxRZW2EuGMrN6",
+    "phones": {
+      "0": "0560182594",
+      "1": "0560182915",
+      "2": "0560183036",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16G": {
+    "code": "16G",
+    "commune": "Baraki",
+    "name": "Alger « Baraki »",
+    "address": "Baraki, route de Larbaâ, entre la mosquée El Bachir El Ibrahimi et le commissariat de la circonscription administrative.",
+    "map": "https://maps.app.goo.gl/iyNkN9K46bvPAHAa8",
+    "phones": {
+      "0": "0560158882",
+      "1": "0560158961",
+      "2": "0560158953",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16H": {
+    "code": "16H",
+    "commune": "Bordj El Bahri",
+    "name": "Alger « Bordj el bahri »",
+    "address": "Cité Galoul, lotissement coopératif immobilier, n° 428 (A coté de la crèche IBN BAZ - طريق المرشي كوسيدار الجديدة )",
+    "map": "https://goo.gl/maps/wunCi94v4i1feEnv8",
+    "phones": {
+      "0": "0563029129",
+      "1": "0563029128",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16I": {
+    "code": "16I",
+    "commune": "Zeralda",
+    "name": "Alger « Zeralda »",
+    "address": "Local N, Cité 62 local LPP BTN 5C, 02 03 RDC, Zéralda",
+    "map": "https://maps.app.goo.gl/AikVJeQ1HCGym1NR6",
+    "phones": {
+      "0": "0563029229",
+      "1": "0560262242",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16J": {
+    "code": "16J",
+    "commune": "Birkhadem",
+    "name": "Alger « Birkhadem »",
+    "address": "Birkhadem El Malha ",
+    "map": "https://maps.app.goo.gl/dv32FZwsAvbsDhdm7",
+    "phones": {
+      "0": "0560004746",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "16K": {
+    "code": "16K",
+    "commune": "Hussein Dey",
+    "name": "Alger « Hussein Dey »",
+    "address": "Rue Layache Yahia N06, Hussein Dey en face Mosquee De Brossette",
+    "map": "https://maps.app.goo.gl/GnN4xkjkRsdn4tfQA",
+    "phones": {
+      "0": "0770006944",
+      "1": "0560432083",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h30"
+  },
+  "16L": {
+    "code": "16L",
+    "commune": "Draria",
+    "name": "Alger « Draria »",
+    "address": "Draria Boudjemaa Temime Al Ansar",
+    "map": "https://maps.app.goo.gl/sQ5x9hBvux5BWSzd6",
+    "phones": {
+      "0": "0560521522",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–19h00"
+  },
+  "17A": {
+    "code": "17A",
+    "commune": "Djelfa",
+    "name": "Djelfa",
+    "address": "Centre-ville, en face de la Caisse Nationale des Retraites (C.N.R), Quartier Ben Djerma",
+    "map": "https://maps.app.goo.gl/XzTJCLFSvtiA4PWV6",
+    "phones": {
+      "0": "0770580860",
+      "1": "0550429422",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "17B": {
+    "code": "17B",
+    "commune": "Ain Oussera",
+    "name": "Djelfa «Ain Ouassara»",
+    "address": "Quartier Mohamed Boudiaf, Section 23, Local n° 30 Bisi, Commune de Ain Oussera.",
+    "map": "https://maps.app.goo.gl/vT6iVZfJrZv8ZgRXA",
+    "phones": {
+      "0": "0549746237",
+      "1": "027941332",
+      "2": "0778550473",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "18A": {
+    "code": "18A",
+    "commune": "Jijel",
+    "name": "Jijel",
+    "address": "rue26, Avenue Kaoula Mokhtar, cita sans intérdit , Hay IDARI",
+    "map": "https://maps.app.goo.gl/Xd69qa4VBgX63ZXMA",
+    "phones": {
+      "0": "0770613439",
+      "1": "0561660019",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "18B": {
+    "code": "18B",
+    "commune": "El Milia",
+    "name": "Jijel « El Milia »",
+    "address": "5 juillet rue du stade EL-MILIA, à côté de la protection civile ",
+    "map": "https://maps.app.goo.gl/hcxb24pAKoLGFJAW7 ",
+    "phones": {
+      "0": "0560004745",
+      "1": "0560004701",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "19A": {
+    "code": "19A",
+    "commune": "Setif",
+    "name": "Sétif",
+    "address": "Cité Mesoudi Edhouadi 1014-614 Logement (En face la gare Didouche Mourad)",
+    "map": "https://maps.app.goo.gl/6hq9NN4VUM5BAj7D8",
+    "phones": {
+      "0": "0550428220",
+      "1": "0561638678",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "19B": {
+    "code": "19B",
+    "commune": "El Eulma",
+    "name": "Sétif «El eulma»",
+    "address": "Tassahoumi, a coté de transport hamouda et hôtel Rato rue Touaher el khayer et à côté de transport el ikhlas, el eulma, Sétif",
+    "map": "https://maps.app.goo.gl/d7r2PVGBic74EGsS9",
+    "phones": {
+      "0": "0561864463",
+      "1": "0550428625",
+      "2": "0770608717",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "19C": {
+    "code": "19C",
+    "commune": "Ain Oulmane",
+    "name": "Sétif «Ain Oulmene»",
+    "address": "En face CEM Douhil Abdul Hamid,",
+    "map": "https://maps.app.goo.gl/QDG27DsQddAXCgUG6",
+    "phones": {
+      "0": "0770749621",
+      "1": "0770749618",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "19RE": {
+    "code": "19RE",
+    "commune": "Guidjel",
+    "name": "Sétif «Guidjel»",
+    "address": "La zone industrielle, en face du groupe SADI et à côté de la moussala d'El Takwa",
+    "map": "https://maps.app.goo.gl/cpCLJ2TQe36sg7SK6",
+    "phones": {
+      "0": "0770749653",
+      "1": "0555506670",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "20A": {
+    "code": "20A",
+    "commune": "Saida",
+    "name": "Saïda",
+    "address": "Cité Riad en face Maison de l'Environnement",
+    "map": "https://maps.app.goo.gl/VviCNGfZ5paDP6Yg8",
+    "phones": {
+      "0": "0550428481",
+      "1": "0560421128",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "21A": {
+    "code": "21A",
+    "commune": "Skikda",
+    "name": "Skikda",
+    "address": "Rue du Chahid Meziane Salah (Route Bouyali, Immeuble Guerza) شارع الشهيد مزيان صالح (طريق بويعلى,عمارة ڨرزة)",
+    "map": "https://maps.app.goo.gl/vgXbhSdJ3d4i32Cb6",
+    "phones": {
+      "0": "0770773555",
+      "1": "0561759686",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "21B": {
+    "code": "21B",
+    "commune": "Azzaba",
+    "name": "Skikda « Azzaba »",
+    "address": "Cite mefrouche  dahmane",
+    "map": "",
+    "phones": {
+      "0": "0560316523",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "21C": {
+    "code": "21C",
+    "commune": "Collo",
+    "name": "Skikda «Collo»",
+    "address": "Rue Zighoud Youssef (en face l'école primaire Mesikh Ammar / à côté du tribunal de Collo)",
+    "map": "https://maps.app.goo.gl/rCFaZiYpJ1T6xfXZ6",
+    "phones": {
+      "0": "0560476772",
+      "1": "0560499695",
+      "2": "",
+      "3": ""
+    },
+    "email": "Superviseur : mtouta@noest-dz.com | Agent dispatch : mbboukikaz@noest-dz.com",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "22A": {
+    "code": "22A",
+    "commune": "Sidi Bel Abbes",
+    "name": "Sidi bel abbès",
+    "address": "Rue CPR , En face Masjid El Ansar - حي بني عامر ، مقابل مسجد الانصار",
+    "map": "https://maps.app.goo.gl/etRK49tRiqgm2jM89",
+    "phones": {
+      "0": "0770610413",
+      "1": "0560419987",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "23A": {
+    "code": "23A",
+    "commune": "Annaba",
+    "name": "Annaba",
+    "address": "Rue Djemila, Saint Claud (À côté de la mosqué Badr)",
+    "map": "https://maps.app.goo.gl/6yKATA45oXvHHihk9",
+    "phones": {
+      "0": "0561623524",
+      "1": "0770582366",
+      "2": "0770582331",
+      "3": "0770610699"
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "23B": {
+    "code": "23B",
+    "commune": "El Bouni",
+    "name": "Annaba «EL BOUNI»",
+    "address": "Fractionnement de la Bouni 2, zone urbaine n° 43, rez-de-chaussée, section 40, groupe de propriété 02, Bouni",
+    "map": "https://maps.app.goo.gl/z5TMRRUV6awNv3dRA",
+    "phones": {
+      "0": "0770932016",
+      "1": "0560777653",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "24A": {
+    "code": "24A",
+    "commune": "Guelma",
+    "name": "Guelma",
+    "address": "Cité 19 Juin - Numéro 02, en face marché Elbaraka",
+    "map": "https://maps.app.goo.gl/8gi3VUh2aasGbGQT7",
+    "phones": {
+      "0": "0659698421",
+      "1": "0770610741",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "25A": {
+    "code": "25A",
+    "commune": "Hamma Bouziane",
+    "name": "Constantine «Zouaghi»",
+    "address": "Cité Tlemcen Zouaghi (En face de la gendarmerie)",
+    "map": "https://maps.app.goo.gl/hCfjk81JdYZe1kLt8",
+    "phones": {
+      "0": "0561850861",
+      "1": "0550429556",
+      "2": "0556910802",
+      "3": "0560005537"
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "25B": {
+    "code": "25B",
+    "commune": "El Khroub",
+    "name": "Constantine «Ali Mendjeli»",
+    "address": "En face de Sarl Natura pro Algérie/entre deux salles des fêtés el baraka et méga",
+    "map": "https://maps.app.goo.gl/qk8oJNE96vvU2kzM7",
+    "phones": {
+      "0": "0561623523",
+      "1": "0770570921",
+      "2": "0559006598",
+      "3": "0560183481"
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "25C": {
+    "code": "25C",
+    "commune": "Constantine",
+    "name": "Constantine",
+    "address": "Avenue Kaddour Boumedous (Ciloc) a coté de la direction régionale d’Air Algérie.",
+    "map": "https://maps.app.goo.gl/N9uLL4Ji2AagvhWZ9",
+    "phones": {
+      "0": "0560459167",
+      "1": "0560463858",
+      "2": "0555508343",
+      "3": "0561906766",
+      "4": "0770890359"
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "26A": {
+    "code": "26A",
+    "commune": "Medea",
+    "name": "Médéa",
+    "address": "Cité Ennasr (Près du pôle universitaire et Sonelgaz)",
+    "map": "https://maps.app.goo.gl/u1nnLgz6wQABnUt19",
+    "phones": {
+      "0": "0770605318",
+      "1": "0550429981",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "27A": {
+    "code": "27A",
+    "commune": "Mostaganem",
+    "name": "Mostaganem",
+    "address": "La pépinière en face la glacière juste à côté de la libraire BENALIOUA ( cité AKID AMIROUCHE boulevard NAFOUSSI OTHMAN)",
+    "map": "https://maps.app.goo.gl/1a83AMSY4JicE49U8",
+    "phones": {
+      "0": "0561772345",
+      "1": "0561827231",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "27B": {
+    "code": "27B",
+    "commune": "Sidi Lakhdar",
+    "name": "Mostaganem «Sidi lakhder»",
+    "address": "rue si abdelah  01 novembre devant la poste sidi lakhder",
+    "map": "https://maps.app.goo.gl/QKZ5yCySSb2Eo7XP7",
+    "phones": {
+      "0": "0560264267",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "28A": {
+    "code": "28A",
+    "commune": "Msila",
+    "name": "M'sila",
+    "address": "Rue Ichbilia (En face l'université de M'Sila)",
+    "map": "https://maps.app.goo.gl/GPxraSKTwr6gqPdF6",
+    "phones": {
+      "0": "0770754014",
+      "1": "0561821829",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "28B": {
+    "code": "28B",
+    "commune": "Bou Saada",
+    "name": "M'sila «Bousaada»",
+    "address": "Cité El Bader (ESTTIH) a coté de L'annexe de L'APC ,Bousaada",
+    "map": "https://maps.app.goo.gl/Fq9e9wroyanPQ7CA9",
+    "phones": {
+      "0": "0559270829",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "29A": {
+    "code": "29A",
+    "commune": "Mohammadia",
+    "name": "Mascara «Mohammadia»",
+    "address": "Rue Larbi Ben M'hidi, a coté de l'agence de Barigou,",
+    "map": "https://maps.app.goo.gl/8qccid2Pesg8FtpR8",
+    "phones": {
+      "0": "0770582372",
+      "1": "0550602272",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "29B": {
+    "code": "29B",
+    "commune": "Mascara",
+    "name": "Mascara «Ville»",
+    "address": "04 Rue Bouakkaz Ali, La zone 08, Mascara (à côté de salle des fêtes Bent El Solana, et Cafeteria Ali ; En face CNR Mascara)",
+    "map": "https://maps.app.goo.gl/X4hBFDuW1pJ6eTUd7",
+    "phones": {
+      "0": "0561680241",
+      "1": "0561680236",
+      "2": "0561680238",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "30A": {
+    "code": "30A",
+    "commune": "Ouargla",
+    "name": "Ouargla",
+    "address": "Sidi Abdelkader, derrière la maison de jeune",
+    "map": "https://maps.app.goo.gl/Eeq8SWYKwXZVu2XV6",
+    "phones": {
+      "0": "0550602271",
+      "1": "0770938789",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "30B": {
+    "code": "30B",
+    "commune": "Hassi Messaoud",
+    "name": "Ouargla «Hassi Messaoud»",
+    "address": "Quartier 1850, rue principale du marché hebdomadaire, en face de l’ancienne agence KIA, Hassi Messaoud",
+    "map": "https://maps.app.goo.gl/QKZ5yCySSb2Eo7XP7",
+    "phones": {
+      "0": "0563026710",
+      "1": "0563026725",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "31A": {
+    "code": "31A",
+    "commune": "Es Senia",
+    "name": "Oran «Maraval»",
+    "address": "Maraval en face fulla moda a côté de supérette El kandi",
+    "map": "https://maps.app.goo.gl/t7SNHxxqhJXKBBae8",
+    "phones": {
+      "0": "0560239767",
+      "1": "0560392373",
+      "2": "0561808143",
+      "3": "0561623534",
+      "4": "0770171936"
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "31B": {
+    "code": "31B",
+    "commune": "Bir El Djir",
+    "name": "Oran «Bir El Djir»",
+    "address": "Coopérative Immobilière Dar El Amel - N°14 - Local1 RC",
+    "map": "https://maps.app.goo.gl/YyNEn3FWzMchRyLK9",
+    "phones": {
+      "0": "0550429662",
+      "1": "0550429661",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "31C": {
+    "code": "31C",
+    "commune": "Oran",
+    "name": "Oran «Gambita»",
+    "address": "Gambetta En face arrêt de bus 51 et 11 de (dispensaire cave-gay)",
+    "map": "https://maps.app.goo.gl/832PTz4ngWYMxzkf6",
+    "phones": {
+      "0": "0560181020",
+      "1": "0560181117",
+      "2": "0560181125",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "31D": {
+    "code": "31D",
+    "commune": "Arzew",
+    "name": "Oran «Arzew»",
+    "address": "EN FACE ANCIEN DAIRA D’ARZEW , Rue KADIR ELHABIB N° 04, Oran",
+    "map": "",
+    "phones": {
+      "0": "0560265681",
+      "1": "0560266405",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "31E": {
+    "code": "31E",
+    "commune": "Sidi Chami",
+    "name": "Oran «Essabah»",
+    "address": "Coopérative Immobilière El Salam, N° D3, Lotissement 02, Îlot 51 (Partie 02), Îlot 292, Sidi Chami, Cité Essabah, à côté du terminus du tramway.",
+    "map": "https://maps.app.goo.gl/h8RLmKarHtHDMZQp9",
+    "phones": {
+      "0": "0560324392",
+      "1": "0770006902",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "32A": {
+    "code": "32A",
+    "commune": "El Bayadh",
+    "name": "El Bayadh ",
+    "address": "Cité jolie vue (Al-Mandhar Al-Jamil), à côté de la Direction de la distribution d'électricité et de gaz",
+    "map": "https://maps.app.goo.gl/qbL18AuxDX4iTosx9",
+    "phones": {
+      "0": "0560481886",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "33A": {
+    "code": "33A",
+    "commune": "Illizi",
+    "name": "Illizi",
+    "address": "Centre-ville, quartier Bouchache, rue de la Poissonnerie.",
+    "map": "https://maps.app.goo.gl/UpDYBCAjy5doLAsy8",
+    "phones": {
+      "0": "0560892842",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "34A": {
+    "code": "34A",
+    "commune": "Bordj Bou Arreridj",
+    "name": "Bordj Bou Arreridj",
+    "address": "Rue Tabet Salah Bordj Bou Arreridj (Devant la maison de finance)",
+    "map": "https://maps.app.goo.gl/tndtMs9TUTZ4XPgk7",
+    "phones": {
+      "0": "0550428634",
+      "1": "0770773018",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "34B": {
+    "code": "34B",
+    "commune": "Bordj Bou Arreridj «Ras El Oued» ",
+    "name": "Ras El Oued",
+    "address": "À l’intersection de la rue Salah Bey et de la rue Moussa N’mar , en face de la Brigade Régionale de la Gendarmerie Nationale de Ras El Oued",
+    "map": "https://maps.app.goo.gl/PvGGchTzqK2huG7n8",
+    "phones": {
+      "0": "0770172580",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–17h30"
+  },
+  "35A": {
+    "code": "35A",
+    "commune": "Boumerdes",
+    "name": "Boumerdès ",
+    "address": "Cité mimouza en face la piscine olympique Boumerdes",
+    "map": "https://maps.app.goo.gl/TemVvkYXig6VyEpz5",
+    "phones": {
+      "0": "0770754064",
+      "1": "0770570924",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "35B": {
+    "code": "35B",
+    "commune": "Ouled Moussa",
+    "name": "Boumerdès «Ouled Moussa» ",
+    "address": "La zone industrielle d'Ouled Moussa",
+    "map": "https://maps.app.goo.gl/mZAQoLAj3uJnvEPr8",
+    "phones": {
+      "0": "0560665086",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "35C": {
+    "code": "35C",
+    "commune": "Bordj Menaiel",
+    "name": "Boumerdès «Bordj Menaiel»",
+    "address": "Rue Madaoui Ali, LOCAL BOUMZER EN FACE OPHTALMOLOGISTE DOCTEUR BENMOUSSA HOCINE, BORDJ MENAIEL, BOUMERDES ",
+    "map": "https://maps.app.goo.gl/fefE7RWUe7anKPwA9",
+    "phones": {
+      "0": "0563029215",
+      "1": "0563029214",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "35D": {
+    "code": "35D",
+    "commune": "Dellys",
+    "name": "Boumerdès «Dellys»",
+    "address": "La banlieue Est de Dellys, route nationale n° 24, Rez de chaussée bâtiment (B), Local N° B05, DELLYS | Repère : AGENCE IMMOBILLIERE NADJI",
+    "map": "https://maps.app.goo.gl/C4VdGeKvsZBVWPWc9",
+    "phones": {
+      "0": "0560018652",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "36A": {
+    "code": "36A",
+    "commune": "El Tarf",
+    "name": "El Taref",
+    "address": "حي ريتين خميس , بجانب الأمن الحضري الأول",
+    "map": "https://maps.app.goo.gl/GJF8NyCrQDXd5w73A",
+    "phones": {
+      "0": "0550522421",
+      "1": "0550523464",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "37A": {
+    "code": "37A",
+    "commune": "Tindouf",
+    "name": "Tindouf",
+    "address": "Magasin N°03 cité Al-Qasabi, Section 14, Groupement Immobilier N° 165, Commune de Tindouf ",
+    "map": "https://maps.app.goo.gl/gpqJxUdLaebL7NGt7",
+    "phones": {
+      "0": "0560555395",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "38A": {
+    "code": "38A",
+    "commune": "Tissemsilt",
+    "name": "Tissemsilt",
+    "address": "Résidence kaidi (promotion) ancien arrêt des taxis",
+    "map": "https://maps.app.goo.gl/qBX7DVgH2dBAZfKu6",
+    "phones": {
+      "0": "0560650819",
+      "1": "0555589197",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "39A": {
+    "code": "39A",
+    "commune": "El Oued",
+    "name": "El Oued",
+    "address": "Cité Al-Rimal, Commune El Oued wilaya El Ouadi (la route menant au tribunal)",
+    "map": "https://maps.app.goo.gl/2GeaAQvQotEyjsg28",
+    "phones": {
+      "0": "0550520770",
+      "1": "0550521485",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "40A": {
+    "code": "40A",
+    "commune": "Khenchela",
+    "name": "Khenchela",
+    "address": "Rue du poid lourd à coté de la clinique du dialyse Messai -Khenchela-",
+    "map": "https://maps.app.goo.gl/2MmLNCuoL7szc1YA8",
+    "phones": {
+      "0": "0561759173",
+      "1": "0560469790",
+      "2": "0555562589",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "41A": {
+    "code": "41A",
+    "commune": "Souk Ahras",
+    "name": "Souk ahres",
+    "address": "En face radio souk ahras et l laboratoire des analyses Taghest",
+    "map": "https://maps.app.goo.gl/8sKTN9kvbPMbhF3G8",
+    "phones": {
+      "0": "0560030559",
+      "1": "0560039852",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "42A": {
+    "code": "42A",
+    "commune": "Tipaza",
+    "name": "Tipaza",
+    "address": "Cité Mohammed Bougara, a coté de ecole privé DAYA Shcool",
+    "map": "https://maps.app.goo.gl/S8u9UU2HsXyT19Ms6",
+    "phones": {
+      "0": "0770580690",
+      "1": "0550602568",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "42B": {
+    "code": "42B",
+    "commune": "Kolea",
+    "name": "Tipaza «Koléa»",
+    "address": "Route d’Alger - Kolea, commune de Kolea, wilaya de Tipaza.",
+    "map": "https://maps.app.goo.gl/6pQ9EdJsh39qbhpW8",
+    "phones": {
+      "0": "0563026712",
+      "1": "0563026701",
+      "2": "0770170636",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "43A": {
+    "code": "43A",
+    "commune": "Mila",
+    "name": "Mila ",
+    "address": "chateau d'eau en face protection civile",
+    "map": "https://maps.app.goo.gl/UVcD63ANz8Zxi1hc8",
+    "phones": {
+      "0": "0550518508",
+      "1": "0550518509",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "43B": {
+    "code": "43B",
+    "commune": "Chelghoum Laid",
+    "name": "Mila «Chelghoum El aid»",
+    "address": "Rue 1er Nouvembre 1954 Chelghoum El aid (hotel Rhumel)",
+    "map": "",
+    "phones": {
+      "0": "0550523511",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "43C": {
+    "code": "43C",
+    "commune": "Tadjenanet",
+    "name": "Mila «Tadjenanet»",
+    "address": "Rue 1 novembre en face cem mohamed abdo",
+    "map": "https://maps.app.goo.gl/wS1oHNfrsWN2uTgz6",
+    "phones": {
+      "0": "0660968179",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "43D": {
+    "code": "43D",
+    "commune": "Ferdjioua",
+    "name": "Mila «Ferdjioua»",
+    "address": "Rue 1 novembre en face la gam assurance",
+    "map": "https://maps.app.goo.gl/acR4uw1y68JDEvjC7",
+    "phones": {
+      "0": "0770225873",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "44A": {
+    "code": "44A",
+    "commune": "Ain Defla",
+    "name": "Ain Defla",
+    "address": "City Najem, en face de l'entrée du groupement régional de la Gendarmerie Nationale, L’escadron",
+    "map": "https://maps.app.goo.gl/X6h2X7J9dgH9idGt7",
+    "phones": {
+      "0": "0561770486",
+      "1": "0560607115",
+      "2": "0560889758",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "44B": {
+    "code": "44B",
+    "commune": "Khemis Miliana",
+    "name": "Ain Defla «Khemis miliana»",
+    "address": "Cité Ahmed ben Abd Allah commune khemismiliana wilaya de Ain defla",
+    "map": "https://maps.app.goo.gl/yEUeJychPyp9VZoJ9",
+    "phones": {
+      "0": "0556069297",
+      "1": "0553011878",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "45A": {
+    "code": "45A",
+    "commune": "Mechria",
+    "name": "Naâma «Mécheria»",
+    "address": "Route Nationale n°06, à côté de l’hôtel Amine et du centre d’Algérie Télécom",
+    "map": "https://maps.app.goo.gl/3CkDdyRMLKmnbbZg9",
+    "phones": {
+      "0": "0560294576",
+      "1": "0770615202",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "46A": {
+    "code": "46A",
+    "commune": "Ain Temouchent",
+    "name": "Aïn Témouchent",
+    "address": "22A cité des oliviers ain témouchnet 46000(en face du parking de la  wilaya)",
+    "map": "https://maps.app.goo.gl/V6HZrwBBZgsW5sjx8",
+    "phones": {
+      "0": "0560908785",
+      "1": "0550428624",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "47A": {
+    "code": "47A",
+    "commune": "Ghardaia",
+    "name": "Ghardaïa",
+    "address": "Rue principale Hadj Messaoud en face la branche municipale, Haj Masoud",
+    "map": "https://maps.app.goo.gl/o8LUFLQj796inkPe8",
+    "phones": {
+      "0": "0561686305",
+      "1": "0561638680",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "48A": {
+    "code": "48A",
+    "commune": "Relizane",
+    "name": "Relizane",
+    "address": "Cité 31 logmt en face la justice, a coté de la banque societé général algerie",
+    "map": "https://maps.app.goo.gl/TVkvkzx9DSXGLyc26",
+    "phones": {
+      "0": "0560754029",
+      "1": "0560791527",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "49A": {
+    "code": "49A",
+    "commune": "Timimoun",
+    "name": "Timimoun",
+    "address": "cité MAHDJOUB N° de la porte 16 , Timimoun en face le stade et SAA",
+    "map": "https://maps.app.goo.gl/mTodfGAHc7dfozJy8",
+    "phones": {
+      "0": "0555518628",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "51A": {
+    "code": "51A",
+    "commune": "Ouled Djellal",
+    "name": "Ouled Djellal",
+    "address": "تحت فندق ترنزيت نجانبة الحماية المدنية ولاد جلال /   Rez-de-chaussée de l'hôtel Transit, à côté de la protection civile d'Ouled Djellal.",
+    "map": "https://maps.app.goo.gl/NhyzzqPmKrJRgs1b9",
+    "phones": {
+      "0": "0770749651",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "52A": {
+    "code": "52A",
+    "commune": "Beni Abbes",
+    "name": "BENI ABBES",
+    "address": "A coté la wilaya BENI ABBES , en face LAPIWI ( المجلس الشعبي الولائي  (",
+    "map": "https://maps.app.goo.gl/27WiRCQt9ZAZ2Xbj9",
+    "phones": {
+      "0": "0561906728",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "53A": {
+    "code": "53A",
+    "commune": "Ain Salah",
+    "name": "In Salah",
+    "address": "Près de la Direction des travaux publics, en face de l'entrée du radar d'Algérie Télécom",
+    "map": "https://maps.app.goo.gl/kcTKWXveoDBDjXRi6",
+    "phones": {
+      "0": "0560362803",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "55A": {
+    "code": "55A",
+    "commune": "Touggourt",
+    "name": "Touggourt",
+    "address": "Cité Sidi Abdeslam (Prés de la banque BEA), Touggourt",
+    "map": "https://maps.app.goo.gl/K87WhPBkdSoTX5eS9",
+    "phones": {
+      "0": "0770610683",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "56A": {
+    "code": "56A",
+    "commune": "Djanet",
+    "name": "Djanet",
+    "address": "Centre-ville Tine Khatema, à côté du dentiste, Djanet",
+    "map": "https://maps.app.goo.gl/JYAs2vcDcr1YYbr87",
+    "phones": {
+      "0": "0563026716",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  },
+  "57A": {
+    "code": "57A",
+    "commune": "El M'Ghair",
+    "name": "El M'Ghair",
+    "address": "Centre-ville, à côté du café Jneidi – El M'Ghair.",
+    "map": "https://maps.app.goo.gl/uv55fsXkvTXTgLLC7",
+    "phones": {
+      "0": "0560143313",
+      "1": "0560175370",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–13h00 | 17h30–20h00"
+  },
+  "58A": {
+    "code": "58A",
+    "commune": "El Meniaa",
+    "name": "El Meniaa",
+    "address": "Rue de l'unite African (À côté de la boulangerie Boussaid) Il se trouve à 20 mètres de la mosquée saad beno abi elouas",
+    "map": "https://maps.app.goo.gl/q2u9ijWUoQymwa7dA",
+    "phones": {
+      "0": "0770602445",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "email": "",
+    "horaires": "Sam–Jeu, 8h30–18h00"
+  }
+}

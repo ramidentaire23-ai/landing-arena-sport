@@ -1,0 +1,25 @@
+{
+  "name": "arena-sport-dz",
+  "version": "1.0.0",
+  "description": "ARENA SPORT DZ Sports Eyewear E-commerce COD Landing Page with NOEST & Meta CAPI",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "keywords": [
+    "arena-sport",
+    "ecommerce",
+    "cod",
+    "algeria",
+    "noest",
+    "meta-capi"
+  ],
+  "author": "ARENA SPORT DZ Team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
