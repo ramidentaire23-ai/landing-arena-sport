@@ -1,14 +1,23 @@
 'use strict';
 const {hash,UUID,publicReferences,priceOrder,metaEvent,eventDate,historyKey}=require('./domain');
-function createOrderService({db,carrier,env=process.env,fetcher=fetch,now=()=>new Date()}){
+function createOrderService({db,carrier,legacyCarrier=null,env=process.env,fetcher=fetch,now=()=>new Date()}){
+ const accountKey=carrier.accountKey?.()||'current',legacyKey=legacyCarrier?.accountKey?.()||null;
+ const referenceCacheKey='account:'+accountKey;
+ function carrierFor(order){
+  // Untagged orders predate account routing and belong to the retained old account.
+  const key=order.carrierAccountKey||legacyKey||accountKey;
+  if(key===accountKey)return carrier;
+  if(legacyCarrier&&key===legacyKey)return legacyCarrier;
+  throw Object.assign(new Error('ORDER_CARRIER_ACCOUNT_UNAVAILABLE'),{status:409});
+ }
  async function refreshReferences(){
   const raw=await carrier.references(),clean=publicReferences(raw);
   if(!clean.wilayas.length)throw new Error('NO_SERVICEABLE_WILAYAS');
-  await db.query("INSERT INTO noest_reference_cache(id,payload,fetched_at) VALUES('current',$1,$2) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload,fetched_at=excluded.fetched_at",[JSON.stringify(raw),now()]);
+  await db.query("INSERT INTO noest_reference_cache(id,payload,fetched_at) VALUES($1,$2,$3) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload,fetched_at=excluded.fetched_at",[referenceCacheKey,JSON.stringify(raw),now()]);
   return clean;
  }
  async function getReferences(){
-  const [row]=await db.query("SELECT payload,fetched_at FROM noest_reference_cache WHERE id='current'");
+  const [row]=await db.query('SELECT payload,fetched_at FROM noest_reference_cache WHERE id=$1',[referenceCacheKey]);
   return !row||now()-new Date(row.fetched_at)>86400000?refreshReferences():publicReferences(row.payload);
  }
  function response(row){
@@ -38,7 +47,7 @@ function createOrderService({db,carrier,env=process.env,fetcher=fetch,now=()=>ne
    return response(prior.status==='creating'?{...prior,status:'pending'}:prior);
   }
   if(!carrier.configured())throw new Error('CARRIER_NOT_CONFIGURED');
-  const order=priceOrder(input,await getReferences()),reference='ARENA-'+id;
+  const order={...priceOrder(input,await getReferences()),carrierAccountKey:accountKey},reference='ARENA-'+id;
   const rows=await db.query("INSERT INTO orders(id,reference,request_hash,receipt_hash,status,order_data,event_context) VALUES($1,$2,$3,$4,'creating',$5,$6) ON CONFLICT(id) DO NOTHING RETURNING *",
    [id,reference,requestHash,hash(input.receiptToken),JSON.stringify(order),JSON.stringify(context)]);
   if(!rows.length)return create(input,context);
@@ -90,15 +99,18 @@ function createOrderService({db,carrier,env=process.env,fetcher=fetch,now=()=>ne
   if(!UUID.test(id||'')||typeof tracking!=='string')throw Object.assign(new Error('INVALID_REQUEST'),{status:422});
   const [row]=await db.query("SELECT * FROM orders WHERE id=$1 AND status IN ('creating','pending')",[id]);
   if(!row)throw Object.assign(new Error('PENDING_ORDER_NOT_FOUND'),{status:404});
-  const data=await carrier.info([tracking]),info=data[tracking]?.OrderInfo;
+  const data=await carrierFor(row.order_data).info([tracking]),info=data[tracking]?.OrderInfo;
   if(!info||info.reference!==row.reference||Number(info.montant)!==row.order_data.total)throw Object.assign(new Error('TRACKING_DOES_NOT_MATCH'),{status:409});
   return response(await accept(row,tracking,eventDate(info.created_at)||now()));
  }
  async function syncOrders(){
   const rows=await db.query("SELECT * FROM orders WHERE status='accepted' AND tracking IS NOT NULL AND created_at>now()-interval '120 days' ORDER BY last_polled_at NULLS FIRST LIMIT 100");
   let updated=0;
-  for(let i=0;i<rows.length;i+=25){
-   const batch=rows.slice(i,i+25),info=await carrier.info(batch.map(r=>r.tracking));
+  const accounts=new Map();
+  for(const row of rows){const owner=carrierFor(row.order_data);if(!accounts.has(owner))accounts.set(owner,[]);accounts.get(owner).push(row);}
+  for(const [owner,accountRows]of accounts){
+  for(let i=0;i<accountRows.length;i+=25){
+   const batch=accountRows.slice(i,i+25),info=await owner.info(batch.map(r=>r.tracking));
    for(const row of batch){
     const record=info[row.tracking];if(!record||record.OrderInfo?.reference!==row.reference)continue;
     const events=(record.activity||[]).map(raw=>({raw,key:historyKey(raw),time:eventDate(raw.date)})).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
@@ -122,6 +134,7 @@ function createOrderService({db,carrier,env=process.env,fetcher=fetch,now=()=>ne
     }
     await db.transaction(statements);updated++;
    }
+  }
   }
   return {updated};
  }

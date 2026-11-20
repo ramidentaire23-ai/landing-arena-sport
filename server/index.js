@@ -26,7 +26,7 @@ function createApp(options={}){
  const env=options.env||process.env,app=express();app.disable('x-powered-by');
  app.use(express.json({limit:'24kb'}));
  let service=options.service;
- const getService=()=>service||(service=createOrderService({db:getDatabase(),carrier:createCarrier(env),env}));
+ const getService=()=>service||(service=createOrderService({db:getDatabase(),carrier:createCarrier(env),legacyCarrier:env.NOEST_LEGACY_USER_GUID&&env.NOEST_LEGACY_API_TOKEN?createCarrier({...env,NOEST_USER_GUID:env.NOEST_LEGACY_USER_GUID,NOEST_API_TOKEN:env.NOEST_LEGACY_API_TOKEN}):null,env}));
  const background=options.background||(task=>{
   const safe=task().catch(()=>console.error('[orders] BACKGROUND_TASK_FAILED'));
   if(env.VERCEL)require('@vercel/functions').waitUntil(safe);
