@@ -1,15 +1,5 @@
 {
   "version": 2,
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/merci",
-      "destination": "/merci.html"
-    }
-  ],
   "functions": {
     "api/index.js": {
       "maxDuration": 300
@@ -25,5 +15,18 @@
   "buildCommand": "npm run build",
   "regions": [
     "fra1"
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.js"
+    }
   ]
 }
