@@ -51,7 +51,7 @@ npm run build
 
 Unit/integration tests run against PGlite PostgreSQL. Browser tests use a dedicated local fixture server and stubs; they cannot send real NOEST parcels or Meta events. Do not point automated browser tests at a production order form.
 
-Use Meta's official Test Events code when validating live CAPI delivery. Never create fake production Purchase events to increase signal volume. A controlled NOEST smoke parcel must remain unvalidated, be explicitly labelled as a test, and be deleted after verification.
+Meta's Test Events code is a debugging aid, not a sandbox: Meta states those events can still be used for targeting and measurement. Validate live transport with genuine actions, such as an actual PageView; keep synthetic Purchase tests in local fixtures. See https://developers.facebook.com/documentation/ads-commerce/conversions-api/using-the-api#testEvents. Never create fake production Purchase events to increase signal volume. A controlled NOEST smoke parcel must remain unvalidated, be explicitly labelled as a test, and be deleted after verification.
 
 ## Creative assets
 

@@ -126,7 +126,7 @@ function createOrderService({db,carrier,env=process.env,fetcher=fetch,now=()=>ne
   return {updated};
  }
  async function metrics(){
-  const [orders]=await db.query("SELECT count(*) AS submitted,count(*) FILTER(WHERE status='accepted') AS accepted,count(*) FILTER(WHERE status IN ('creating','pending')) AS pending,count(*) FILTER(WHERE dispatched_at IS NOT NULL OR carrier_state IN ('in_delivery','delivered','returning','returned')) AS dispatched,count(*) FILTER(WHERE carrier_state='delivered') AS currently_delivered,count(*) FILTER(WHERE carrier_state='returned') AS returned,count(*) FILTER(WHERE carrier_state='returning') AS returning,count(*) FILTER(WHERE paid_at IS NOT NULL) AS payment_received FROM orders");
+  const [orders]=await db.query("SELECT count(*) AS submitted,count(*) FILTER(WHERE status='accepted') AS accepted,count(*) FILTER(WHERE status IN ('creating','pending')) AS pending,count(*) FILTER(WHERE dispatched_at IS NOT NULL OR carrier_state IN ('in_transit','in_delivery','delivered','returned')) AS dispatched,count(*) FILTER(WHERE carrier_state='delivered') AS currently_delivered,count(*) FILTER(WHERE carrier_state='returned') AS returned,count(*) FILTER(WHERE carrier_state='returning') AS returning,count(*) FILTER(WHERE paid_at IS NOT NULL) AS payment_received FROM orders");
   const events=await db.query('SELECT state,count(*) AS count FROM meta_event_outbox GROUP BY state');return {orders,events};
  }
  return {create,receipt,getReferences,refreshReferences,flushEvents,syncOrders,reconcilePending,metrics};

@@ -104,3 +104,11 @@ test('NOEST sparse numeric-object commune lists normalize to active reference re
  const c=createCarrier({NOEST_API_TOKEN:'fixture',NOEST_USER_GUID:'fixture'},async()=>new Response(JSON.stringify(bodies[i++]),{status:200}));
  const ref=publicReferences(await c.references());assert.equal(ref.wilayas.find(w=>w.id===16).communes.length,1);assert.equal(ref.wilayas.find(w=>w.id===49).deskFee,0);
 });
+
+test('a return request alone does not count as a dispatched parcel',async t=>{
+ const f=await fixture();t.after(f.close);const a=await f.service.create(input(),context);
+ f.infos[a.tracking].activity=[{event_key:'return_asked_by_customer',date:'2026-11-20 10:00:00'}];await f.service.syncOrders();
+ assert.equal(Number((await f.service.metrics()).orders.dispatched),0);
+ f.infos[a.tracking].activity=[{event_key:'validation_collect_colis',date:'2026-11-20 09:00:00'},{event_key:'return_asked_by_customer',date:'2026-11-20 10:00:00'}];await f.service.syncOrders();
+ assert.equal(Number((await f.service.metrics()).orders.dispatched),1);
+});
