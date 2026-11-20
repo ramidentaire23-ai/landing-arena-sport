@@ -105,14 +105,16 @@ function createOrderService({db,carrier,legacyCarrier=null,env=process.env,fetch
  }
  async function syncOrders(){
   const rows=await db.query("SELECT * FROM orders WHERE status='accepted' AND tracking IS NOT NULL AND created_at>now()-interval '120 days' ORDER BY last_polled_at NULLS FIRST LIMIT 100");
-  let updated=0;
+  let updated=0,unavailable=0;
   const accounts=new Map();
   for(const row of rows){const owner=carrierFor(row.order_data);if(!accounts.has(owner))accounts.set(owner,[]);accounts.get(owner).push(row);}
   for(const [owner,accountRows]of accounts){
   for(let i=0;i<accountRows.length;i+=25){
    const batch=accountRows.slice(i,i+25),info=await owner.info(batch.map(r=>r.tracking));
    for(const row of batch){
-    const record=info[row.tracking];if(!record||record.OrderInfo?.reference!==row.reference)continue;
+    const record=info[row.tracking];
+    if(!record){await db.query("UPDATE orders SET carrier_state='tracking_unavailable',last_polled_at=now() WHERE id=$1",[row.id]);unavailable++;continue;}
+    if(record.OrderInfo?.reference!==row.reference)continue;
     const events=(record.activity||[]).map(raw=>({raw,key:historyKey(raw),time:eventDate(raw.date)})).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
     let state='created',deliveredAt=row.delivered_at,paidAt=row.paid_at,dispatchedAt=row.dispatched_at;
     for(const e of events){
@@ -136,10 +138,10 @@ function createOrderService({db,carrier,legacyCarrier=null,env=process.env,fetch
    }
   }
   }
-  return {updated};
+  return {updated,unavailable};
  }
  async function metrics(){
-  const [orders]=await db.query("SELECT count(*) AS submitted,count(*) FILTER(WHERE status='accepted') AS accepted,count(*) FILTER(WHERE status IN ('creating','pending')) AS pending,count(*) FILTER(WHERE dispatched_at IS NOT NULL OR carrier_state IN ('in_transit','in_delivery','delivered','returned')) AS dispatched,count(*) FILTER(WHERE carrier_state='delivered') AS currently_delivered,count(*) FILTER(WHERE carrier_state='returned') AS returned,count(*) FILTER(WHERE carrier_state='returning') AS returning,count(*) FILTER(WHERE paid_at IS NOT NULL) AS payment_received FROM orders");
+  const [orders]=await db.query("SELECT count(*) AS submitted,count(*) FILTER(WHERE status='accepted') AS accepted,count(*) FILTER(WHERE status IN ('creating','pending')) AS pending,count(*) FILTER(WHERE dispatched_at IS NOT NULL OR carrier_state IN ('in_transit','in_delivery','delivered','returned')) AS dispatched,count(*) FILTER(WHERE carrier_state='delivered') AS currently_delivered,count(*) FILTER(WHERE carrier_state='returned') AS returned,count(*) FILTER(WHERE carrier_state='returning') AS returning,count(*) FILTER(WHERE carrier_state='tracking_unavailable') AS tracking_unavailable,count(*) FILTER(WHERE paid_at IS NOT NULL) AS payment_received FROM orders");
   const events=await db.query('SELECT state,count(*) AS count FROM meta_event_outbox GROUP BY state');return {orders,events};
  }
  return {create,receipt,getReferences,refreshReferences,flushEvents,syncOrders,reconcilePending,metrics};

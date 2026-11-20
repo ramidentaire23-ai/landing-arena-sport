@@ -59,3 +59,16 @@ test('an order with an unavailable owner is never sent to another NOEST account'
  const own={...f.carrier,accountKey:()=> 'new',info:async()=>{infoCalls++;return {};}};
  await assert.rejects(service(f,own).syncOrders(),/ORDER_CARRIER_ACCOUNT_UNAVAILABLE/);assert.equal(infoCalls,0);
 });
+
+test('a missing carrier tracking remains accepted for review without creating another Purchase',async t=>{
+ const c=createCarrier({NOEST_USER_GUID:'fixture',NOEST_API_TOKEN:'fixture'},async()=>new Response(JSON.stringify({message:'Trackings non trouvés'}),{status:404}));
+ assert.deepEqual(await c.info(['missing']),{});
+ await assert.rejects(c.create({variant:{name_fr:'fixture'},quantity:1}),e=>e.code==='CARRIER_REJECTED');
+ const f=await fixture();t.after(f.close);const accepted=await f.service.create(input(),context);
+ const own={...f.carrier,info:async()=>({})},after=service(f,own);
+ const result=await after.syncOrders();assert.equal(result.updated,0);assert.equal(result.unavailable,1);
+ const [row]=await f.db.query('SELECT status,carrier_state FROM orders WHERE id=$1',[accepted.orderId]);
+ assert.equal(row.status,'accepted');assert.equal(row.carrier_state,'tracking_unavailable');
+ assert.equal(Number((await after.metrics()).orders.tracking_unavailable),1);
+ assert.equal((await f.db.query("SELECT * FROM meta_event_outbox WHERE event_name='Purchase'")).length,1);
+});

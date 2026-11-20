@@ -16,6 +16,8 @@ function createCarrier(env=process.env,fetcher=fetch){
    data=await res.json();
   }catch{throw new CarrierError('CARRIER_RESPONSE_UNKNOWN',true);}
   if(res.status>=500)throw new CarrierError('CARRIER_RESPONSE_UNKNOWN',true);
+  // NOEST returns 404 when no requested tracking is available. Keep the order for review.
+  if(res.status===404&&endpoint==='/api/public/get/trackings/info')return {};
   if(!res.ok)throw new CarrierError('CARRIER_REJECTED');
   return data;
  }
