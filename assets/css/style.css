@@ -1086,3 +1086,8 @@ select.form-input-control {
 .sticky-action-btn:active {
   transform: scale(0.98);
 }
+
+.product-intro{padding:20px 4px 24px}.product-intro h1{font-size:26px;line-height:1.4}.product-intro p{margin:8px 0;color:#475569}.intro-offer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.intro-offer strong{font-size:30px;color:#0a0a0a}.intro-offer a{background:#0a0a0a;color:white;padding:12px 22px;border-radius:12px;font-weight:800}.product-intro .intro-delivery{font-size:13px}.variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.variant-name-ar{font-size:13px}.variant-name-fr{font-size:10px}.order-status{padding:12px 0;font-size:14px;color:#334155;overflow-wrap:anywhere}.delivery-type-card[aria-disabled=true]{opacity:.45;cursor:not-allowed}.order-submit-btn:disabled{opacity:.55;cursor:wait}.gallery-dot{border:0;padding:0}[hidden]{display:none!important}.success-icon-badge{animation:none}@media(max-width:360px){.variant-grid{gap:6px}.variant-option-btn{padding:8px}.variant-tag{font-size:9px}.intro-offer a{padding:12px}.product-intro h1{font-size:23px}}
+
+/* Age-specific model groups */
+.variant-age-group+.variant-age-group{margin-top:20px;padding-top:16px;border-top:1px solid #e2e8f0}.variant-age-heading{font-size:17px;line-height:1.5;margin:0}.variant-age-description{font-size:13px;color:#475569;margin:3px 0 10px}.variant-thumb-box{width:72px;height:64px}.variant-name-ar{font-size:15px}.variant-name-fr{font-size:12px}.variant-tag{font-size:11px;line-height:1.6}.selected-model-details{font-size:13px;line-height:1.8;color:#334155;background:#f1f5f9;padding:10px 12px;border-radius:10px;margin:16px 0 0}.variant-option-btn:focus-visible{outline:3px solid #0284c7;outline-offset:3px}

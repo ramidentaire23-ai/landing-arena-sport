@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تم تأكيد طلبك بنجاح | ARENA SPORT DZ</title>
+  <title>متابعة الطلب | Arena Sport</title>
   <link rel="icon" type="image/jpeg" href="assets/images/logo-arena-sport.jpg">
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -137,7 +137,7 @@
     
     fbq('init', '1422859033068055');
   </script>
-</head>
+<script src="assets/js/tracking.js" defer></script><script src="assets/js/receipt.js" defer></script></head>
 <body style="background-color: #F1F5F9; padding-bottom: 20px;">
 
   <!-- Simple Header -->
@@ -157,14 +157,11 @@
         </svg>
       </div>
 
-      <h1 class="thankyou-title">تهانينا! تم تسجيل طلبك بنجاح 🎉</h1>
-      <p class="thankyou-subtitle">
-        شكراً لثقتكم في <strong>ARENA SPORT</strong>.<br>
-        سيتصل بك فريق خدمة العملاء هاتفياً لتأكيد العنوان وشحن نظارتك في أقرب وقت.
-      </p>
+      <h1 class="thankyou-title">جارٍ التحقق من طلبك…</h1>
+      <p class="thankyou-subtitle"></p>
 
       <!-- Order Details Box -->
-      <div class="order-summary-box">
+      <div class="order-summary-box" hidden>
         <div class="summary-heading">
           <span>تفاصيل طلبيتك</span>
           <span class="order-ref-pill" id="orderRefDisplay">ARENA-00000</span>
@@ -204,7 +201,7 @@
       </div>
 
       <!-- Quick WhatsApp Confirmation -->
-      <a href="#" id="whatsappBtn" class="whatsapp-confirm-btn" target="_blank" rel="noopener">
+      <a href="#" id="whatsappBtn" class="whatsapp-confirm-btn" style="display:none" hidden target="_blank" rel="noopener">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
         </svg>
@@ -215,57 +212,5 @@
     </div>
   </div>
 
-  <script>
-    (function() {
-      // Récupérer les données de la commande
-      let order = null;
-      try {
-        const raw = localStorage.getItem('arena_sport_last_order');
-        if (raw) order = JSON.parse(raw);
-      } catch (e) {
-        console.error(e);
-      }
-
-      // Fallback paramètres URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const orderId = urlParams.get('order_id') || (order ? order.orderId : 'ARENA-12345');
-      const token = urlParams.get('token') || '';
-
-      if (order) {
-        document.getElementById('orderRefDisplay').textContent = order.orderId;
-        document.getElementById('summaryClientName').textContent = order.clientName;
-        document.getElementById('summaryPhone').textContent = order.phone;
-        document.getElementById('summaryVariant').textContent = order.variantName;
-        document.getElementById('summaryLocation').textContent = `${order.commune} (${order.wilayaName})`;
-        document.getElementById('summaryDeliveryType').textContent = order.deliveryType === 'desk' ? 'توصيل لمكتب الشحن (Stop Desk)' : 'توصيل للمنزل (Domicile)';
-        document.getElementById('summaryTotal').textContent = `DA ${order.totalAmount}`;
-
-        // Bouton WhatsApp officiel ARENA SPORT (+213 663407015)
-        const phoneStore = "213663407015";
-        const textMsg = encodeURIComponent(`مرحباً ARENA SPORT، أود تأكيد طلبيتي رقم ${order.orderId} الخاصة بنظارة الرياضة (${order.variantName}).\nالاسم: ${order.clientName}\nالولاية: ${order.wilayaName}\nالمبلغ: ${order.totalAmount} دج`);
-        document.getElementById('whatsappBtn').href = `https://wa.me/${phoneStore}?text=${textMsg}`;
-      } else {
-        document.getElementById('orderRefDisplay').textContent = orderId;
-        const phoneStore = "213663407015";
-        const textMsg = encodeURIComponent(`مرحباً ARENA SPORT، أود تأكيد طلبيتي رقم ${orderId} الخاصة بنظارة الرياضة.`);
-        document.getElementById('whatsappBtn').href = `https://wa.me/${phoneStore}?text=${textMsg}`;
-      }
-
-      // Meta Pixel Purchase Event (Déduplication garantie par session)
-      const purchaseFiredKey = `purchase_fired_${orderId}`;
-      if (!sessionStorage.getItem(purchaseFiredKey) && typeof fbq === 'function') {
-        const totalVal = order ? order.totalAmount : 3380;
-        fbq('track', 'Purchase', {
-          content_name: 'ARENA SPORT Lunettes',
-          content_type: 'product',
-          value: totalVal,
-          currency: 'DZD',
-          num_items: order ? order.quantity : 1
-        }, { eventID: orderId });
-
-        sessionStorage.setItem(purchaseFiredKey, 'true');
-      }
-    })();
-  </script>
 </body>
 </html>

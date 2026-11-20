@@ -21,3 +21,8 @@ data/live_noest_*.json
 Thumbs.db
 
 .vercel
+.env*
+
+public/
+test-results/
+playwright-report/

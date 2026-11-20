@@ -5,7 +5,11 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "node --watch server/index.js"
+    "dev": "node --watch server/index.js",
+    "test": "node --test test/*.test.js",
+    "db:migrate": "node scripts/migrate.js",
+    "test:browser": "playwright test",
+    "build": "node scripts/build.js"
   },
   "keywords": [
     "arena-sport",
@@ -18,8 +22,16 @@
   "author": "ARENA SPORT DZ Team",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
+    "@neondatabase/serverless": "^1.2.1",
+    "@vercel/functions": "^3.11.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.17",
+    "@playwright/test": "^1.65.1"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }
