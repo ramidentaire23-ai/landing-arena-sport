@@ -60,3 +60,11 @@ Meta's Test Events code is a debugging aid, not a sandbox: Meta states those eve
 For editable source and generation prompts, use the owner's local creative package. `scripts/render-creatives.js` exports a supplied local `creative.html` package and checks typography before writing images. Usage: `node scripts/render-creatives.js <absolute-package-directory> v2`. The current v2 assets distinguish ages 12+ with branches/elastic from children ages 5–11 with elastic only.
 
 The deployed domain and Facebook Page identity must agree with the intended storefront before any ad is published.
+
+## Switching the NOEST account
+
+Store the new account in NOEST_USER_GUID and NOEST_API_TOKEN. Preserve the previous pair in server-only NOEST_LEGACY_USER_GUID and NOEST_LEGACY_API_TOKEN while its orders need tracking. New orders always use the current account; legacy credentials are used only for tracking/reconciling earlier orders. Untagged orders predate this change and resolve to the legacy account when configured. Account identity is saved as a one-way fingerprint, never a token. Keep legacy credentials until their orders no longer require reconciliation.
+
+Reference data and account-specific fees are cached separately by account identity, so a switch cannot silently reuse the previous account fees. Do not move existing orders to another account or re-emit Purchase when changing credentials. Test the new reference APIs and stage a production build before promoting it.
+
+When NOEST cannot find a saved tracking, the order remains accepted in the ledger and is marked tracking_unavailable for review. It is not recreated, cancelled, or counted as a new Purchase. Later polling can recover it if the provider returns the tracking again. Internal metrics expose the unavailable count.

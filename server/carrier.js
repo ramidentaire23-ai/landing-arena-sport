@@ -1,4 +1,5 @@
 'use strict';
+const {createHash}=require('node:crypto');
 class CarrierError extends Error{
  constructor(code,uncertain=false){super(code);this.code=code;this.uncertain=uncertain;}
 }
@@ -15,10 +16,13 @@ function createCarrier(env=process.env,fetcher=fetch){
    data=await res.json();
   }catch{throw new CarrierError('CARRIER_RESPONSE_UNKNOWN',true);}
   if(res.status>=500)throw new CarrierError('CARRIER_RESPONSE_UNKNOWN',true);
+  // NOEST returns 404 when no requested tracking is available. Keep the order for review.
+  if(res.status===404&&endpoint==='/api/public/get/trackings/info')return {};
   if(!res.ok)throw new CarrierError('CARRIER_REJECTED');
   return data;
  }
  return {configured,
+  accountKey:()=>createHash('sha256').update('noest:'+String(env.NOEST_API_URL||'https://app.noest-dz.com')+':'+String(env.NOEST_USER_GUID||'').trim()).digest('hex'),
   async create(o){
    const data=await request('/api/public/create/order',{reference:o.reference,client:o.clientName,phone:o.phone,
     adresse:String(o.address).slice(0,255),wilaya_id:o.wilayaId,commune:o.commune,montant:o.total,produit:o.variant.name_fr+' x'+o.quantity,
