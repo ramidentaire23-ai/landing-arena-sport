@@ -14,6 +14,24 @@
   select.replaceChildren(new Option(placeholder,''));
   items.forEach(item=>select.add(new Option(item.label,item.value)));
  }
+ function renderVariants(){
+  const container=$('variantGroups');container.replaceChildren();
+  for(const group of [{id:'12_plus',title:'12 سنة فما فوق',detail:'مع أذرع ورباط'},{id:'kids_5_11',title:'للأطفال من 5 إلى 11 سنة',detail:'رباط فقط، بدون أذرع'}]){
+   const section=document.createElement('div');section.className='variant-age-group';section.dataset.ageGroup=group.id;
+   const heading=document.createElement('h3');heading.className='variant-age-heading';heading.textContent=group.title;
+   const detail=document.createElement('p');detail.className='variant-age-description';detail.textContent=group.detail;
+   const grid=document.createElement('div');grid.className='variant-grid';
+   for(const p of products.filter(item=>item.ageGroup===group.id)){
+    const button=document.createElement('button');button.type='button';button.className='variant-option-btn';button.dataset.variant=p.id;button.setAttribute('aria-label',p.name_ar+' — '+p.equipmentAr);
+    button.innerHTML='<div class="variant-top-row"><div class="variant-thumb-box"><img loading="lazy"></div><div class="variant-check-indicator"><span class="variant-check-dot"></span></div></div><div class="variant-name-ar"></div><div class="variant-name-fr"></div><span class="variant-tag tag-new"></span>';
+    const img=button.querySelector('img');img.src=p.photos[0];img.alt=p.name_ar;
+    button.querySelector('.variant-name-ar').textContent=p.color_ar;button.querySelector('.variant-name-fr').textContent=p.color_fr;
+    button.querySelector('.variant-tag').textContent=p.ageLabelAr;
+    button.addEventListener('click',()=>selectVariant(p.id));grid.append(button);
+   }
+   section.append(heading,detail,grid);container.append(section);
+  }
+ }
  function updateGallery(){
   const p=variant();if(!p)return;slide=(slide+p.photos.length)%p.photos.length;
   $('gallerySlideImg').src=p.photos[slide];$('gallerySlideImg').alt='إطار Arena Sport '+p.name_ar;
@@ -29,6 +47,7 @@
   document.querySelectorAll('.variant-option-btn').forEach(b=>{const selected=b.dataset.variant===id;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected));});
   $('selectedVariantInput').value=id;
   $('recapVariantName').textContent='الموديل المختار: '+variant().name_ar;
+  $('selectedModelDetails').textContent=variant().name_ar+' • '+variant().equipmentAr;
   updateGallery();viewProduct();
  }
  function renderTotals(){
@@ -72,7 +91,9 @@
   try{
    const productResponse=await fetch('/api/products');if(!productResponse.ok)throw new Error();
    const catalog=await productResponse.json();products=catalog.variants;if(!products.length)throw new Error();
-   const requested=new URLSearchParams(location.search).get('variant');
+   renderVariants();
+   const queryVariant=new URLSearchParams(location.search).get('variant');
+   const requested=queryVariant==='black_white'?'kids_black':queryVariant;
    selectVariant(products.some(p=>p.id===requested)?requested:variantId);
    const deliveryResponse=await fetch('/api/delivery');if(!deliveryResponse.ok)throw new Error();
    const delivery=await deliveryResponse.json();wilayas=delivery.wilayas;if(!wilayas.length)throw new Error();
@@ -132,7 +153,6 @@
   $('clientNameInput').minLength=3;$('clientPhoneInput').maxLength=22;$('clientAddressInput').minLength=5;
   $('orderForm').addEventListener('input',e=>{if(e.isTrusted&&e.target.value.trim())startCheckout();});
   $('orderForm').addEventListener('submit',e=>{e.preventDefault();submit();});
-  document.querySelectorAll('.variant-option-btn').forEach(b=>b.addEventListener('click',()=>selectVariant(b.dataset.variant)));
   $('btnPrevSlide').addEventListener('click',()=>{slide--;updateGallery();});$('btnNextSlide').addEventListener('click',()=>{slide++;updateGallery();});
   let touch; $('galleryStage').addEventListener('touchstart',e=>touch=e.changedTouches[0].screenX,{passive:true});
   $('galleryStage').addEventListener('touchend',e=>{const d=e.changedTouches[0].screenX-touch;if(Math.abs(d)>40){slide+=d<0?1:-1;updateGallery();}},{passive:true});

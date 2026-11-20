@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Arena Sport | إطار نظارات رياضي للكبار — 2,900 دج</title>
-  <meta name="description" content="إطار نظارات رياضي للكبار مع رباط. 2,900 دج. اختار الموديل وشوف سعر التوصيل لولايتك. الدفع عند الاستلام.">
+  <title>Arena Sport | إطارات رياضية حسب العمر — 2,900 دج</title>
+  <meta name="description" content="4 موديلات: من 12 سنة فما فوق بأذرع ورباط، وللأطفال من 5 إلى 11 سنة برباط فقط. 2,900 دج لكل موديل. الدفع عند الاستلام.">
   <link rel="icon" type="image/jpeg" href="assets/images/logo-arena-sport.jpg">
 
   <!-- Open Graph / Meta Ads -->
@@ -40,7 +40,7 @@
   <aside class="announcement-bar">
     <div class="announcement-inner">
       <span class="pulsing-dot" aria-hidden="true"></span>
-      <span>إطار رياضي للكبار • الدفع عند الاستلام • سعر التوصيل حسب الولاية</span>
+      <span>موديلات حسب العمر • الدفع عند الاستلام • التوصيل حسب الولاية</span>
     </div>
   </aside>
 
@@ -65,7 +65,7 @@
   </header>
 
   <!-- 3. Main Content Container -->
-  <main class="main-wrapper"><section class="product-intro"><h1>إطار نظارات رياضي للكبار</h1><p>مع رباط • ثلاثة موديلات للاختيار</p><div class="intro-offer"><strong><bdi>2,900</bdi> دج</strong><a href="#orderSection">اطلب من الموقع</a></div><p class="intro-delivery">الدفع عند الاستلام. التوصيل يُحسب حسب الولاية.</p></section>
+  <main class="main-wrapper"><section class="product-intro"><h1>إطارات نظارات رياضية</h1><p>4 موديلات حسب العمر: 12 سنة فما فوق أو من 5 إلى 11 سنة</p><div class="intro-offer"><strong><bdi>2,900</bdi> دج</strong><a href="#orderSection">اطلب من الموقع</a></div><p class="intro-delivery">الدفع عند الاستلام. التوصيل يُحسب حسب الولاية.</p></section>
 
     <!-- 4. Product Gallery Section -->
     <section class="gallery-section" aria-label="Galerie Photos du Produit">
@@ -114,54 +114,11 @@
       </div>
     </section>
 
-    <!-- 5. Interactive Variant Selector (Noir/Rouge vs Transparent) -->
-    <section class="variant-selector-card" aria-label="Sélection du Modèle">
-      <div class="variant-header">
-        <div class="variant-title-group">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="m4.93 4.93 4.24 4.24"></path>
-            <path d="m14.83 9.17 4.24-4.24"></path>
-            <path d="m14.83 14.83 4.24 4.24"></path>
-            <path d="m9.17 14.83-4.24 4.24"></path>
-          </svg>
-          <span class="variant-main-label">اختر الموديل واللون :</span>
-        </div>
-        <span class="variant-sub-badge">3 موديلات متوفرة</span>
-      </div>
-
-      <div class="variant-grid">
-        <!-- Variant 1: Noir / Rouge -->
-        <button type="button" class="variant-option-btn selected" data-variant="black_red" aria-label="Modèle Noir et Rouge">
-          <div class="variant-top-row">
-            <div class="variant-thumb-box">
-              <img src="assets/images/black-red-1.jpg" alt="نظارات رياضية أسود أحمر">
-            </div>
-            <div class="variant-check-indicator">
-              <span class="variant-check-dot"></span>
-            </div>
-          </div>
-          <div class="variant-name-ar">أسود / أحمر</div>
-          <div class="variant-name-fr">Noir & Rouge</div>
-          <span class="variant-tag tag-hot">أسود / أحمر</span>
-        </button>
-
-        <!-- Variant 2: Transparent -->
-        <button type="button" class="variant-option-btn" data-variant="transparent" aria-label="Modèle Transparent Cristal">
-          <div class="variant-top-row">
-            <div class="variant-thumb-box">
-              <img src="assets/images/transparent-1.jpg" alt="نظارات رياضية شفاف كريستال">
-            </div>
-            <div class="variant-check-indicator">
-              <span class="variant-check-dot"></span>
-            </div>
-          </div>
-          <div class="variant-name-ar">شفاف رياضي</div>
-          <div class="variant-name-fr">Transparent Cristal</div>
-          <span class="variant-tag tag-new">أناقة رياضية ✨</span>
-        </button>
-      <button type="button" class="variant-option-btn" data-variant="black_white" aria-label="أسود مع ملحقات بيضاء"><div class="variant-top-row"><div class="variant-thumb-box"><img src="assets/images/black-white-1.jpg" alt="إطار أسود مع ملحقات بيضاء ورباط" loading="lazy"></div><div class="variant-check-indicator"><span class="variant-check-dot"></span></div></div><div class="variant-name-ar">أسود / أبيض</div><div class="variant-name-fr">Attaches blanches</div><span class="variant-tag tag-new">مع رباط</span></button>
-</div>
+    <!-- 5. Model selection: four models, two age groups -->
+    <section class="variant-selector-card" aria-label="اختيار الموديل حسب العمر">
+      <div class="variant-header"><span class="variant-main-label">اختار الموديل حسب العمر واللون</span><span class="variant-sub-badge">4 موديلات</span></div>
+      <div id="variantGroups"></div>
+      <p id="selectedModelDetails" class="selected-model-details" aria-live="polite"></p>
     </section>
 
     <!-- 6. Main Order Form Card -->
@@ -369,7 +326,7 @@
         <!-- Price Breakdown Box (Identique à la référence) -->
         <div class="price-breakdown-box">
           <div class="breakdown-row" style="font-size: 12.5px; color: #475569; margin-bottom: 6px;">
-            <span id="recapVariantName">الموديل المختار: أسود / أحمر (Noir & Rouge)</span>
+            <span id="recapVariantName">الموديل المختار: أسود / أحمر — 12 سنة فما فوق</span>
           </div>
 
           <div class="breakdown-row">
@@ -411,10 +368,10 @@
     </section>
 
     <!-- 7. Technical Highlights & 2-in-1 System Benefits -->
-    <section class="features-section" aria-label="تفاصيل المنتج"><h2 class="section-title">إطار رياضي مع رباط</h2><div class="features-grid"><div class="feature-box"><div class="feature-text-block"><h3>اختار الموديل لي يعجبك</h3><p>أسود وأحمر، شفاف، أو أسود مع ملحقات بيضاء. الصور توضح تفاصيل كل موديل.</p></div></div><div class="feature-box"><div class="feature-text-block"><h3>طلب واضح قبل التأكيد</h3><p>شوف سعر الإطار والتوصيل حسب ولايتك قبل إرسال الطلب. نتصل بك للتأكيد، والدفع عند الاستلام.</p></div></div></div></section>
+    <section class="features-section" aria-label="تفاصيل المنتج"><h2 class="section-title">اختار الموديل حسب العمر</h2><div class="features-grid"><div class="feature-box"><div class="feature-text-block"><h3>12 سنة فما فوق: أذرع ورباط</h3><p>الموديل الأسود والأحمر أو الشفاف، مع أذرع ورباط. موديلات الأطفال من 5 إلى 11 سنة متوفرة بالأسود أو الشفاف، برباط فقط وبدون أذرع.</p></div></div><div class="feature-box"><div class="feature-text-block"><h3>طلب واضح قبل التأكيد</h3><p>شوف سعر الإطار والتوصيل حسب ولايتك قبل إرسال الطلب. نتصل بك للتأكيد، والدفع عند الاستلام.</p></div></div></div></section>
 
     <!-- 8. FAQ Accordion Section (Placée tout en bas après le formulaire selon les règles CRO) -->
-    <section class="faq-section" aria-label="الأسئلة الشائعة"><h2 class="section-title">الأسئلة الشائعة</h2><div class="faq-item"><div class="faq-header"><span>كيفاش نطلب؟</span><span aria-hidden="true">+</span></div><div class="faq-body">اختار الموديل، عمّر معلوماتك، وحدّد الولاية وطريقة التوصيل. شوف المجموع واضغط لتسجيل الطلب. نتصل بك لتأكيد المعلومات قبل الإرسال.</div></div><div class="faq-item"><div class="faq-header"><span>شحال سعر التوصيل؟</span><span aria-hidden="true">+</span></div><div class="faq-body">السعر يبان بعد اختيار الولاية والتوصيل للمنزل أو مكتب NOEST. يضاف لسعر الإطار والمجموع يبان قبل تسجيل الطلب.</div></div><div class="faq-item"><div class="faq-header"><span>كيفاش نخلص؟</span><span aria-hidden="true">+</span></div><div class="faq-body">الدفع عند الاستلام. تفاصيل الطلب تتأكد معك هاتفياً قبل الإرسال.</div></div><div class="faq-item"><div class="faq-header"><span>وقتاش يوصل الطلب؟</span><span aria-hidden="true">+</span></div><div class="faq-body">المدة تعتمد على الولاية وخدمة الناقل. نتواصل معك لتأكيد تفاصيل الإرسال.</div></div></section>
+    <section class="faq-section" aria-label="الأسئلة الشائعة"><h2 class="section-title">الأسئلة الشائعة</h2><div class="faq-item"><div class="faq-header"><span>كيفاش نختار حسب العمر؟</span><span aria-hidden="true">+</span></div><div class="faq-body">من 12 سنة فما فوق: أسود وأحمر أو شفاف، مع أذرع ورباط. من 5 إلى 11 سنة: أسود أو شفاف، برباط فقط وبدون أذرع. جميع الموديلات بسعر 2,900 دج للإطار، والتوصيل يضاف حسب الولاية.</div></div><div class="faq-item"><div class="faq-header"><span>كيفاش نطلب؟</span><span aria-hidden="true">+</span></div><div class="faq-body">اختار الموديل، عمّر معلوماتك، وحدّد الولاية وطريقة التوصيل. شوف المجموع واضغط لتسجيل الطلب. نتصل بك لتأكيد المعلومات قبل الإرسال.</div></div><div class="faq-item"><div class="faq-header"><span>شحال سعر التوصيل؟</span><span aria-hidden="true">+</span></div><div class="faq-body">السعر يبان بعد اختيار الولاية والتوصيل للمنزل أو مكتب NOEST. يضاف لسعر الإطار والمجموع يبان قبل تسجيل الطلب.</div></div><div class="faq-item"><div class="faq-header"><span>كيفاش نخلص؟</span><span aria-hidden="true">+</span></div><div class="faq-body">الدفع عند الاستلام. تفاصيل الطلب تتأكد معك هاتفياً قبل الإرسال.</div></div><div class="faq-item"><div class="faq-header"><span>وقتاش يوصل الطلب؟</span><span aria-hidden="true">+</span></div><div class="faq-body">المدة تعتمد على الولاية وخدمة الناقل. نتواصل معك لتأكيد تفاصيل الإرسال.</div></div></section>
 
   </main>
 

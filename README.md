@@ -15,7 +15,7 @@ Never put access tokens in tracked code. The build exports only the two public H
 
 ## Order and delivery flow
 
-- Select a model, then explicitly choose a wilaya and delivery method. Canonical active communes, station codes and account fees come from NOEST.
+- Select one of four age-specific models: black/red or transparent with branches and elastic for ages 12+, or black/transparent children models with elastic only for ages 5–11. Every model costs 2,900 DZD. Then explicitly choose a wilaya and delivery method. Canonical active communes, station codes and account fees come from NOEST.
 - The server computes product price (2,900 DZD per frame), shipping and the COD total. It ignores client-submitted totals.
 - A UUID/idempotency key and hashed receipt token identify a durable order intent before NOEST is contacted.
 - Only NOEST acceptance with a tracking code produces an accepted receipt and Purchase outbox record.
@@ -57,6 +57,6 @@ Meta's Test Events code is a debugging aid, not a sandbox: Meta states those eve
 
 `assets/banners/arena-sport/` contains two creative concepts, each in feed, vertical and square fallback formats. Arabic captions, campaign decisions and account performance evidence are maintained in the owner's private campaign handoff, not in this public repository.
 
-For editable source and generation prompts, use the owner's local creative package. `scripts/render-creatives.js` exports a supplied local `creative.html` package and checks typography before writing images. Usage: `node scripts/render-creatives.js <absolute-package-directory>`.
+For editable source and generation prompts, use the owner's local creative package. `scripts/render-creatives.js` exports a supplied local `creative.html` package and checks typography before writing images. Usage: `node scripts/render-creatives.js <absolute-package-directory> v2`. The current v2 assets distinguish ages 12+ with branches/elastic from children ages 5–11 with elastic only.
 
 The deployed domain and Facebook Page identity must agree with the intended storefront before any ad is published.

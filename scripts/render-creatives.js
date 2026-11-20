@@ -3,6 +3,7 @@ const fs=require('node:fs/promises'),path=require('node:path'),{pathToFileURL}=r
 const {chromium}=require('playwright');
 async function main(){
  const out=process.argv[2]||path.resolve(__dirname,'../../../output/arena-sport');
+ const version=process.argv[3]||'v1';if(!/^v\d+$/.test(version))throw new Error('Invalid creative version');
  await fs.mkdir(path.join(out,'fonts'),{recursive:true});
  const url='https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&family=Outfit:wght@600;700&display=swap';
  const response=await fetch(url,{headers:{'User-Agent':'Mozilla/5.0 Chrome/130.0.0.0 Safari/537.36'}});
@@ -23,7 +24,7 @@ async function main(){
    const checks=await page.evaluate(()=>({arabicFont:document.fonts.check('800 84px Cairo'),overflow:document.documentElement.scrollWidth>1080,
     texts:[...document.querySelectorAll('.hook,.body,.cta,.trust')].map(e=>({text:e.textContent,width:e.getBoundingClientRect().width,scroll:e.scrollWidth}))}));
    if(!checks.arabicFont||checks.overflow||checks.texts.some(t=>t.scroll>t.width+1))throw new Error('Typography overflow: '+JSON.stringify(checks));
-   const name='arena-'+concept+'-v1-'+('1080x'+height)+'.png';
+   const name='arena-'+concept+'-'+version+'-'+('1080x'+height)+'.png';
    await page.locator('#scene').screenshot({path:path.join(out,name)});
    exports.push({name,width:1080,height,checks});await page.close();
   }

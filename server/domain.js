@@ -1,9 +1,66 @@
 'use strict';
 const crypto = require('node:crypto');
 const VARIANTS = {
- black_red: {id:'black_red',name_ar:'أسود / أحمر',name_fr:'Arena Sport noir / rouge',catalogId:'ar1x5xmsm1',photos:['assets/images/black-red-1.jpg','assets/images/black-red-2.jpg']},
- transparent: {id:'transparent',name_ar:'شفاف رياضي',name_fr:'Arena Sport transparent',catalogId:'ffbmkg09sl',photos:['assets/images/transparent-1.jpg','assets/images/transparent-2.jpg']},
- black_white: {id:'black_white',name_ar:'أسود / ملحقات بيضاء',name_fr:'Arena Sport noir / attaches blanches',catalogId:'ARENA-ADULT-BLACK-WHITE',photos:['assets/images/black-white-1.jpg','assets/images/black-white-2.jpg']}
+ "black_red": {
+  "id": "black_red",
+  "name_ar": "أسود / أحمر — 12 سنة فما فوق",
+  "name_fr": "Noir/rouge — 12 ans et plus, branches et élastique",
+  "color_ar": "أسود / أحمر",
+  "color_fr": "Noir & rouge",
+  "ageGroup": "12_plus",
+  "ageLabelAr": "12 سنة فما فوق",
+  "equipmentAr": "أذرع ورباط",
+  "catalogId": "ar1x5xmsm1",
+  "photos": [
+   "assets/images/black-red-1.jpg",
+   "assets/images/black-red-2.jpg"
+  ]
+ },
+ "transparent": {
+  "id": "transparent",
+  "name_ar": "شفاف — 12 سنة فما فوق",
+  "name_fr": "Transparent — 12 ans et plus, branches et élastique",
+  "color_ar": "شفاف",
+  "color_fr": "Transparent",
+  "ageGroup": "12_plus",
+  "ageLabelAr": "12 سنة فما فوق",
+  "equipmentAr": "أذرع ورباط",
+  "catalogId": "ffbmkg09sl",
+  "photos": [
+   "assets/images/transparent-1.jpg",
+   "assets/images/transparent-2.jpg"
+  ]
+ },
+ "kids_black": {
+  "id": "kids_black",
+  "name_ar": "أسود للأطفال — من 5 إلى 11 سنة",
+  "name_fr": "Noir enfant — 5 à 11 ans, élastique uniquement",
+  "color_ar": "أسود",
+  "color_fr": "Noir",
+  "ageGroup": "kids_5_11",
+  "ageLabelAr": "من 5 إلى 11 سنة",
+  "equipmentAr": "رباط فقط، بدون أذرع",
+  "catalogId": "y8eweapeo0",
+  "photos": [
+   "assets/images/kids-black-1.jpg",
+   "assets/images/kids-black-2.jpg"
+  ]
+ },
+ "kids_transparent": {
+  "id": "kids_transparent",
+  "name_ar": "شفاف للأطفال — من 5 إلى 11 سنة",
+  "name_fr": "Transparent enfant — 5 à 11 ans, élastique uniquement",
+  "color_ar": "شفاف",
+  "color_fr": "Transparent",
+  "ageGroup": "kids_5_11",
+  "ageLabelAr": "من 5 إلى 11 سنة",
+  "equipmentAr": "رباط فقط، بدون أذرع",
+  "catalogId": "cb1ztgr1vc",
+  "photos": [
+   "assets/images/kids-transparent-1.jpg",
+   "assets/images/kids-transparent-2.jpg"
+  ]
+ }
 };
 const hash = value => crypto.createHash('sha256').update(String(value)).digest('hex');
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;

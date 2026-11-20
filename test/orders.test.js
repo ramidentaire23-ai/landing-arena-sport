@@ -112,3 +112,15 @@ test('a return request alone does not count as a dispatched parcel',async t=>{
  f.infos[a.tracking].activity=[{event_key:'validation_collect_colis',date:'2026-11-20 09:00:00'},{event_key:'return_asked_by_customer',date:'2026-11-20 10:00:00'}];await f.service.syncOrders();
  assert.equal(Number((await f.service.metrics()).orders.dispatched),1);
 });
+
+test('all four age-specific models retain the correct carrier description and catalog Purchase ID',()=>{
+ const variants=require('../server/domain').VARIANTS;
+ assert.deepEqual(Object.keys(variants),['black_red','transparent','kids_black','kids_transparent']);
+ for(const [id,catalogId,group]of [['black_red','ar1x5xmsm1','12_plus'],['transparent','ffbmkg09sl','12_plus'],['kids_black','y8eweapeo0','kids_5_11'],['kids_transparent','cb1ztgr1vc','kids_5_11']]){
+  const order=priceOrder(input({variantId:id}),publicReferences(references));
+  assert.equal(order.total,3350);assert.equal(order.variant.ageGroup,group);assert.equal(order.variant.catalogId,catalogId);
+  assert.match(order.variant.name_fr,group==='12_plus'?/12 ans et plus, branches et élastique/:/5 à 11 ans, élastique uniquement/);
+  assert.deepEqual(metaEvent({...order,id:'test'},context,'Purchase',new Date()).custom_data.content_ids,[catalogId]);
+ }
+ assert.throws(()=>priceOrder(input({variantId:'black_white'}),publicReferences(references)),/INVALID_ORDER/);
+});
