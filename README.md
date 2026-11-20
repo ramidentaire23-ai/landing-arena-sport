@@ -1,111 +1,62 @@
-# ARENA SPORT DZ — Landing Page E-commerce Haute Conversion (COD Algérie)
+# Arena Sport DZ — website orders
 
-Landing page e-commerce ultra-performante et optimisée pour la conversion (CRO), spécialement conçue pour la marque **ARENA SPORT** (lunettes de sport protectrices à verres interchangeables et adaptables à la vue).
+Arabic sports-frame storefront with server-priced COD checkout, NOEST integration and Meta Pixel/CAPI.
 
-Cette landing page reproduit fidèlement la structure, les badges, les boutons, le design system et l'ergonomie de la boutique de référence tout en intégrant un **sélecteur de variantes interactif (Noir/Rouge vs Transparent)** avec permutation instantanée de la galerie photo.
+## Run
 
----
+Use Node.js 24. Install dependencies with `npm ci`. Link the intended Vercel project, provision Neon Postgres, and pull development variables into the ignored `.env.local` file. Fill the server-only variables listed in `.env.example`, then run:
 
-## 🚀 Fonctionnalités & Points Forts CRO
-
-1. **Fidélité au Design de Référence** :
-   - Bandeau d'annonce supérieur noir avec puce verte pulsante (*Stock Limité : Livraison Offerte dès 6 000 DA*).
-   - En-tête épuré avec logo officiel **ARENA SPORT DZ** et baseline *SPORTS & PERFORMANCE*.
-   - Galerie photos avec badges flottants : `EN STOCK • -31% SOLDE` et compteur dynamique `01 / 02`.
-   - Ligne de réassurance rapide : `En stock - Expédition rapide sous 24h` 📦.
-   - Carte de commande blanche aux coins arrondis avec badge noir `Paiement à la livraison • الدفع عند الاستلام`.
-   - Bouton de commande principal au pouce : `اضغط هنا لتأكيد الطلب الآن 🔒`.
-   - Badge de réassurance verte : `🛡️ ضمان الدفع عند الاستلام بعد معاينة وفحص طردك`.
-   - Barre fixe basse (Sticky CTA) sur mobile avec total en direct et bouton `COMMANDER MAINTENANT`.
-
-2. **Sélecteur de Variantes Dynamique (Exclusivité demandée)** :
-   - Deux modèles intégrés :
-     - **أسود / أحمر (Noir & Rouge Sport)** : Photos haute définition avec branches et sangle élastique.
-     - **شفاف رياضي (Transparent Cristal)** : Photos haute définition sous plusieurs angles.
-   - Lors du clic sur une variante :
-     - La galerie photo change instantanément avec transition douce.
-     - Le compteur de photos se réinitialise.
-     - Le récapitulatif de prix affiche le modèle sélectionné.
-     - Les données envoyées lors de la commande intègrent automatiquement la variante choisie.
-
-3. **Logique Métier COD Algérie (58 Wilayas & Communes)** :
-   - Base de données complète des 58 Wilayas d'Algérie avec leurs communes principales.
-   - Calcul en direct des frais de livraison selon le mode choisi :
-     - **المكتب (Stop Desk)** : 480 DA (ex: Alger) avec note explicative sur les centres de retrait.
-     - **المنزل (Domicile)** : 650 DA (ex: Alger) avec champ d'adresse détaillée dynamique.
-   - Livraison offerte automatique dès 6 000 DA d'achat.
-   - Validation stricte des numéros de téléphone mobiles algériens (10 chiffres commençant par 05, 06 ou 07).
-
-4. **Section Spécifications & Arguments Produits** :
-   - Système 2-en-1 convertible (Sangle élastique réglable + branches interchangeables).
-   - Compatibilité totale avec le montage de verres optiques correcteurs chez l'opticien.
-   - Protection intérieure en silicone antichoc pour le nez et les tempes.
-   - Système d'aération antibuée (Anti-fog vents).
-   - FAQ en accordéon placée stratégiquement après le formulaire de commande.
-
-5. **Page de Remerciement & Suivi Dédupliqué (`merci.html`)** :
-   - Numéro de commande unique généré (`ARENA-XXXXX`).
-   - Récapitulatif complet de la commande.
-   - Bouton de confirmation immédiate WhatsApp pré-rempli pour le client.
-   - Événement `Purchase` Meta Pixel déclenché une seule fois avec token unique et déduplication `eventID`.
-
----
-
-## 📁 Structure des Fichiers
-
-```text
-arena sport landing page/
-├── index.html                  # Landing page principale (RTL Arabe & FR)
-├── merci.html                  # Page de confirmation de commande
-├── .env.example                # Exemple de configuration des clés API et Pixel
-├── README.md                   # Ce guide de déploiement et d'utilisation
-└── assets/
-    ├── css/
-    │   └── style.css           # Feuille de style complète et responsive
-    ├── js/
-    │   ├── app.js              # Moteur interactif (variantes, calculs, formulaire)
-    │   └── wilayas.js          # Données des 58 wilayas, tarifs et communes
-    └── images/
-        ├── logo-arena-sport.jpg# Logo officiel ARENA SPORT DZ
-        ├── black-red-1.jpg     # Photo 1 modèle Noir/Rouge (détaché)
-        ├── black-red-2.jpg     # Photo 2 modèle Noir/Rouge (face/profil)
-        ├── transparent-1.jpg   # Photo 1 modèle Transparent (face 3/4)
-        ├── transparent-2.jpg   # Photo 2 modèle Transparent (arrière/branches)
-        └── reference-landing.jpg # Capture originale de référence
+```sh
+npm run db:migrate
+npm run dev
 ```
 
----
+Never put access tokens in tracked code. The build exports only the two public HTML pages and `assets/`; server code, SQL, private data and environment files are not public assets.
 
-## ⚙️ Personnalisation & Configuration
+## Order and delivery flow
 
-### 1. Modifier le Prix ou les Frais de Livraison
-Dans le fichier `assets/js/app.js` :
-```javascript
-const PRODUCT_CONFIG = {
-  name: "نظارات رياضية واقية ARENA SPORT (نظام 2 في 1)",
-  unitPrice: 2900, // Modifier le prix unitaire en DA
-  freeShippingThreshold: 6000, // Seuil pour la livraison offerte
-  ...
-};
+- Select a model, then explicitly choose a wilaya and delivery method. Canonical active communes, station codes and account fees come from NOEST.
+- The server computes product price (2,900 DZD per frame), shipping and the COD total. It ignores client-submitted totals.
+- A UUID/idempotency key and hashed receipt token identify a durable order intent before NOEST is contacted.
+- Only NOEST acceptance with a tracking code produces an accepted receipt and Purchase outbox record.
+- An uncertain response stays pending. Retrying the same request never blindly creates another parcel.
+- Phone confirmation and carrier validation remain manual in the NOEST dashboard. This application never calls the validation/dispatch endpoint.
+- Browser and server Purchase use the same `purchase:<internal UUID>` event ID. Loading the thank-you URL alone cannot produce a Purchase.
+- Purchase value excludes customer-paid shipping. The carrier COD amount includes it.
+- CAPI delivery uses a durable outbox; a failed event does not cancel an accepted order.
+- The daily authenticated reconciliation job refreshes carrier reference data, records logistics history and retries pending Meta events. Unknown events are retained for review.
+- Delivered custom events are separate from Purchase. Returned and returning parcels remain distinct from current delivered parcels and cash received.
+- NOEST naive event times are interpreted as Algeria time (UTC+1); verify this against the current provider contract before enabling delivery events.
+
+## Routes
+
+Public: `GET /api/products`, `GET /api/delivery`, `POST /api/orders`, and token-protected `POST /api/orders/receipt`.
+
+Internal routes require `Authorization: Bearer <CRON_SECRET>`:
+
+- `GET /api/internal/reconcile`: bounded daily synchronization.
+- `GET /api/internal/metrics`: aggregate order and event delivery counts, with no customer list.
+- `POST /api/internal/reconcile-order`: resolve one pending order using a manually verified tracking code. The server checks its reference and amount before acceptance.
+
+The private ledger stores customer data and event identifiers. Keep database and internal-route credentials server-side. Never make the ledger or provider responses a public export.
+
+## Tests
+
+```sh
+npm test
+npx playwright install chromium
+npm run test:browser
+npm run build
 ```
 
-### 2. Configurer votre Numéro WhatsApp
-Dans le fichier `merci.html` (ligne ~200) :
-```javascript
-const phoneStore = "213550000000"; // Remplacez par votre numéro international sans '+'
-```
+Unit/integration tests run against PGlite PostgreSQL. Browser tests use a dedicated local fixture server and stubs; they cannot send real NOEST parcels or Meta events. Do not point automated browser tests at a production order form.
 
-### 3. Configurer votre Meta Pixel ID
-Dans `index.html` (ligne ~28) et `merci.html` :
-```javascript
-const META_PIXEL_ID = 'VOTRE_PIXEL_ID_ICI';
-```
+Use Meta's official Test Events code when validating live CAPI delivery. Never create fake production Purchase events to increase signal volume. A controlled NOEST smoke parcel must remain unvalidated, be explicitly labelled as a test, and be deleted after verification.
 
----
+## Creative assets
 
-## 🌐 Déploiement
+`assets/banners/arena-sport/` contains two creative concepts, each in feed, vertical and square fallback formats. Arabic captions, campaign decisions and account performance evidence are maintained in the owner's private campaign handoff, not in this public repository.
 
-Cette landing page est 100% statique et ultra-rapide (zéro dépendance lourde). Vous pouvez l'héberger directement sur :
-- **Netlify** / **Vercel** / **Cloudflare Pages** : glisser-déposer le dossier pour une mise en ligne instantanée avec certificat SSL gratuit.
-- **Serveur cPanel / Apache / Nginx** : téléversez l'ensemble des fichiers dans le répertoire `public_html`.
-- **Plateforme `/here-now`** : publiable en une commande via le skill Antigravity dédié.
+For editable source and generation prompts, use the owner's local creative package. `scripts/render-creatives.js` exports a supplied local `creative.html` package and checks typography before writing images. Usage: `node scripts/render-creatives.js <absolute-package-directory>`.
+
+The deployed domain and Facebook Page identity must agree with the intended storefront before any ad is published.
