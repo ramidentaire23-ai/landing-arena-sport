@@ -1091,3 +1091,6 @@ select.form-input-control {
 
 /* Age-specific model groups */
 .variant-age-group+.variant-age-group{margin-top:20px;padding-top:16px;border-top:1px solid #e2e8f0}.variant-age-heading{font-size:17px;line-height:1.5;margin:0}.variant-age-description{font-size:13px;color:#475569;margin:3px 0 10px}.variant-thumb-box{width:72px;height:64px}.variant-name-ar{font-size:15px}.variant-name-fr{font-size:12px}.variant-tag{font-size:11px;line-height:1.6}.selected-model-details{font-size:13px;line-height:1.8;color:#334155;background:#f1f5f9;padding:10px 12px;border-radius:10px;margin:16px 0 0}.variant-option-btn:focus-visible{outline:3px solid #0284c7;outline-offset:3px}
+
+/* Merchant contact before checkout, without unverified return promises. */
+.store-support{margin:24px 0;padding:20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;line-height:1.9}.store-support h2{font-size:19px;margin:0 0 8px}.store-support p{font-size:14px;color:#475569;margin:8px 0}.store-support>a{display:inline-block;margin:8px 0;padding:10px 18px;border-radius:10px;background:#0a0a0a;color:#fff;font-weight:700}.store-support details{margin-top:12px;font-size:13px}.store-support summary{cursor:pointer;text-decoration:underline}

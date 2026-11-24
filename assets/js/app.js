@@ -95,6 +95,9 @@
    const queryVariant=new URLSearchParams(location.search).get('variant');
    const requested=queryVariant==='black_white'?'kids_black':queryVariant;
    selectVariant(products.some(p=>p.id===requested)?requested:variantId);
+   if(catalog.orderingEnabled===false){
+    ready=false;message('نسخة معاينة — تسجيل الطلبات غير متاح هنا. استعمل المتجر الرسمي لإرسال طلبك.');return;
+   }
    const deliveryResponse=await fetch('/api/delivery');if(!deliveryResponse.ok)throw new Error();
    const delivery=await deliveryResponse.json();wilayas=delivery.wilayas;if(!wilayas.length)throw new Error();
    options($('wilayaSelect'),'اختار الولاية',wilayas.map(w=>({value:w.id,label:String(w.id).padStart(2,'0')+' — '+w.name})));

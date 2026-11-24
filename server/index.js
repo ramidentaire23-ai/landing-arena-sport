@@ -20,10 +20,15 @@ function eventContext(req,env){
  catch{context.event_source_url=base+'/';}
  for(const key of ['campaign_id','adset_id','ad_id','utm_source','utm_medium','utm_campaign','utm_content','placement','fbclid'])
   if(typeof input[key]==='string')context[key]=input[key].slice(0,500);
+ const observedAt=Number(input.observedAt);
+ if(Number.isFinite(observedAt)&&observedAt>0&&observedAt<=Date.now()+300000&&observedAt>=Date.now()-90*86400000)
+  context.attribution_observed_at=new Date(observedAt).toISOString();
  return context;
 }
 function createApp(options={}){
  const env=options.env||process.env,app=express();app.disable('x-powered-by');
+ const nonProduction=!!env.VERCEL_ENV&&env.VERCEL_ENV!=='production';
+ const integrationsAllowed=!nonProduction&&(!!options.service||env.VERCEL_ENV==='production'||(!env.VERCEL&&env.ALLOW_LOCAL_LIVE_INTEGRATIONS==='true'));
  app.use(express.json({limit:'24kb'}));
  let service=options.service;
  const getService=()=>service||(service=createOrderService({db:getDatabase(),carrier:createCarrier(env),legacyCarrier:env.NOEST_LEGACY_USER_GUID&&env.NOEST_LEGACY_API_TOKEN?createCarrier({...env,NOEST_USER_GUID:env.NOEST_LEGACY_USER_GUID,NOEST_API_TOKEN:env.NOEST_LEGACY_API_TOKEN}):null,env}));
@@ -36,17 +41,24 @@ function createApp(options={}){
   if(!['GET','HEAD'].includes(req.method)&&req.headers.origin&&req.headers.origin!==requestOrigin(req,env))return res.status(403).json({error:'ORIGIN_NOT_ALLOWED'});
   next();
  });
- app.get('/api/health',(req,res)=>res.json({ok:true,ordersConfigured:!!env.DATABASE_URL&&!!env.NOEST_API_TOKEN&&!!env.NOEST_USER_GUID}));
- app.get('/api/products',(req,res)=>res.json({unitPrice:2900,variants:Object.values(VARIANTS)}));
- app.get('/api/delivery',async(req,res,next)=>{try{res.json(await getService().getReferences());}catch(e){next(e);}});
- app.post('/api/orders',async(req,res,next)=>{
+ function liveOnly(req,res,next){
+  if(!integrationsAllowed)return res.status(503).json({error:'ORDERING_DISABLED_FOR_PREVIEW'});
+  next();
+ }
+ app.get('/api/health',(req,res)=>res.json({ok:true,orderingEnabled:integrationsAllowed,ordersConfigured:integrationsAllowed&&!!env.DATABASE_URL&&!!env.NOEST_API_TOKEN&&!!env.NOEST_USER_GUID}));
+ app.get('/api/products',(req,res)=>{
+  res.json({unitPrice:2900,variants:Object.values(VARIANTS),orderingEnabled:integrationsAllowed});
+  if(integrationsAllowed)background(()=>getService().runMaintenance());
+ });
+ app.get('/api/delivery',liveOnly,async(req,res,next)=>{try{res.json(await getService().getReferences());}catch(e){next(e);}});
+ app.post('/api/orders',liveOnly,async(req,res,next)=>{
   try{
    const result=await getService().create(req.body,eventContext(req,env));
    if(result.status==='accepted')background(()=>getService().flushEvents(1,result.orderId));
    res.status(result.status==='accepted'?201:result.status==='rejected'?422:202).json(result);
   }catch(e){next(e);}
  });
- app.post('/api/orders/receipt',async(req,res,next)=>{
+ app.post('/api/orders/receipt',liveOnly,async(req,res,next)=>{
   try{const receipt=await getService().receipt(req.body.orderId,req.body.receiptToken);
    if(!receipt)return res.status(404).json({error:'RECEIPT_NOT_FOUND'});res.json(receipt);
   }catch(e){next(e);}
@@ -56,11 +68,11 @@ function createApp(options={}){
   if(!env.CRON_SECRET||supplied.length!==expected.length||!crypto.timingSafeEqual(supplied,expected))return res.status(401).json({error:'UNAUTHORIZED'});
   next();
  }
- app.get('/api/internal/metrics',internal,async(req,res,next)=>{try{res.json(await getService().metrics());}catch(e){next(e);}});
- app.get('/api/internal/reconcile',internal,async(req,res,next)=>{
-  try{await getService().refreshReferences();const carrier=await getService().syncOrders(),meta=await getService().flushEvents();res.json({carrier,meta});}catch(e){next(e);}
+ app.get('/api/internal/metrics',liveOnly,internal,async(req,res,next)=>{try{res.json(await getService().metrics());}catch(e){next(e);}});
+ app.get('/api/internal/reconcile',liveOnly,internal,async(req,res,next)=>{
+  try{const result=await getService().runMaintenance({force:true,includeReferences:true});res.status(result.ok?200:503).json(result);}catch(e){next(e);}
  });
- app.post('/api/internal/reconcile-order',internal,async(req,res,next)=>{
+ app.post('/api/internal/reconcile-order',liveOnly,internal,async(req,res,next)=>{
   try{res.json(await getService().reconcilePending(req.body.orderId,req.body.tracking));}catch(e){next(e);}
  });
  app.use('/api',(req,res)=>res.status(404).json({error:'NOT_FOUND'}));

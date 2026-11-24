@@ -24,7 +24,8 @@ Never put access tokens in tracked code. The build exports only the two public H
 - Browser and server Purchase use the same `purchase:<internal UUID>` event ID. Loading the thank-you URL alone cannot produce a Purchase.
 - Purchase value excludes customer-paid shipping. The carrier COD amount includes it.
 - CAPI delivery uses a durable outbox; a failed event does not cancel an accepted order.
-- The daily authenticated reconciliation job refreshes carrier reference data, records logistics history and retries pending Meta events. Unknown events are retained for review.
+- Production page visits wake due background work: Meta retries at most once per minute and carrier synchronization at most once per 15 minutes. PostgreSQL leases coordinate instances. The daily authenticated reconciliation remains a fallback when there is no traffic. These are due-work intervals, not a promise of a timer while the site has no visits.
+- Carrier references, carrier status synchronization and Meta retries fail independently. A NOEST failure cannot skip the first Meta retry pass. Newly found delivery events receive a second bounded flush after synchronization.
 - Delivered custom events are separate from Purchase. Returned and returning parcels remain distinct from current delivered parcels and cash received.
 - NOEST naive event times are interpreted as Algeria time (UTC+1); verify this against the current provider contract before enabling delivery events.
 
@@ -39,6 +40,16 @@ Internal routes require `Authorization: Bearer <CRON_SECRET>`:
 - `POST /api/internal/reconcile-order`: resolve one pending order using a manually verified tracking code. The server checks its reference and amount before acceptance.
 
 The private ledger stores customer data and event identifiers. Keep database and internal-route credentials server-side. Never make the ledger or provider responses a public export.
+
+Metrics include pending/dead CAPI counts, the oldest pending event, last successful send and maintenance job state. Job failures log only generic codes. Inspect pending orders or missing trackings manually; these changes do not recreate parcels or re-emit old Purchase events.
+
+## Preview isolation and attribution
+
+Vercel Preview/Development deployments cannot read the production checkout references, create orders, expose receipts or run integration jobs. The form explains that orders are disabled. The production Meta bootstrap runs only on landing-arena-sport.vercel.app. Tests inject isolated services and a fake browser pixel. To deliberately use non-Vercel local live integrations, set ALLOW_LOCAL_LIVE_INTEGRATIONS=true with appropriate development credentials; do not use production credentials for synthetic orders.
+
+UTM-only visits now save a fresh attribution context. The server retains its observed timestamp for comparing internal attribution windows; saved context does not mean Meta attributed the order in its seven-day window. Browser and server Purchase IDs stay unchanged.
+
+Run the additive schema migration before publishing this version; integration_jobs is required for coordinated background work. Rolling back the application does not require dropping this table.
 
 ## Tests
 

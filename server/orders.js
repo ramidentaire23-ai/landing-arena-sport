@@ -1,5 +1,6 @@
 'use strict';
 const {hash,UUID,publicReferences,priceOrder,metaEvent,eventDate,historyKey}=require('./domain');
+const {createMaintenance}=require('./maintenance');
 function createOrderService({db,carrier,legacyCarrier=null,env=process.env,fetcher=fetch,now=()=>new Date()}){
  const accountKey=carrier.accountKey?.()||'current',legacyKey=legacyCarrier?.accountKey?.()||null;
  const referenceCacheKey='account:'+accountKey;
@@ -73,12 +74,12 @@ function createOrderService({db,carrier,legacyCarrier=null,env=process.env,fetch
  async function flushEvents(limit=20,onlyOrderId=null){
   if(!env.META_ACCESS_TOKEN&&!env.META_CAPI_ACCESS_TOKEN)return {sent:0,waitingForConfiguration:true};
   const candidates=await db.query("SELECT event_id FROM meta_event_outbox WHERE state='pending' AND next_attempt_at<=now() AND (locked_until IS NULL OR locked_until<now()) AND ($1::uuid IS NULL OR order_id=$1) ORDER BY created_at LIMIT $2",[onlyOrderId,limit]);
-  let sent=0;
+  let sent=0,failed=0,dead=0;
   for(const item of candidates){
    const [entry]=await db.query("UPDATE meta_event_outbox SET locked_until=now()+interval '2 minutes',attempts=attempts+1 WHERE event_id=$1 AND state='pending' AND (locked_until IS NULL OR locked_until<now()) RETURNING *",[item.event_id]);
    if(!entry)continue;
    if(now().getTime()/1000-entry.payload.event_time>6*86400){
-    await db.query("UPDATE meta_event_outbox SET state='dead',last_error_code='EVENT_TOO_OLD',locked_until=NULL WHERE event_id=$1",[entry.event_id]);continue;
+    await db.query("UPDATE meta_event_outbox SET state='dead',last_error_code='EVENT_TOO_OLD',locked_until=NULL WHERE event_id=$1",[entry.event_id]);dead++;continue;
    }
    try{
     const version=/^v\d+\.\d+$/.test(env.META_API_VERSION||'')?env.META_API_VERSION:'v25.0';
@@ -90,10 +91,11 @@ function createOrderService({db,carrier,legacyCarrier=null,env=process.env,fetch
     if(!res.ok||Number(result.events_received)!==1)throw new Error('META_EVENT_NOT_ACCEPTED');
     await db.query("UPDATE meta_event_outbox SET state='sent',sent_at=now(),locked_until=NULL,last_error_code=NULL WHERE event_id=$1",[entry.event_id]);sent++;
    }catch{
+    failed++;
     await db.query("UPDATE meta_event_outbox SET locked_until=NULL,last_error_code='META_SEND_FAILED',next_attempt_at=now()+interval '5 minutes' WHERE event_id=$1",[entry.event_id]);
    }
   }
-  return {sent};
+  return {sent,failed,dead};
  }
  async function reconcilePending(id,tracking){
   if(!UUID.test(id||'')||typeof tracking!=='string')throw Object.assign(new Error('INVALID_REQUEST'),{status:422});
@@ -142,8 +144,12 @@ function createOrderService({db,carrier,legacyCarrier=null,env=process.env,fetch
  }
  async function metrics(){
   const [orders]=await db.query("SELECT count(*) AS submitted,count(*) FILTER(WHERE status='accepted') AS accepted,count(*) FILTER(WHERE status IN ('creating','pending')) AS pending,count(*) FILTER(WHERE dispatched_at IS NOT NULL OR carrier_state IN ('in_transit','in_delivery','delivered','returned')) AS dispatched,count(*) FILTER(WHERE carrier_state='delivered') AS currently_delivered,count(*) FILTER(WHERE carrier_state='returned') AS returned,count(*) FILTER(WHERE carrier_state='returning') AS returning,count(*) FILTER(WHERE carrier_state='tracking_unavailable') AS tracking_unavailable,count(*) FILTER(WHERE paid_at IS NOT NULL) AS payment_received FROM orders");
-  const events=await db.query('SELECT state,count(*) AS count FROM meta_event_outbox GROUP BY state');return {orders,events};
+  const events=await db.query('SELECT state,count(*) AS count FROM meta_event_outbox GROUP BY state');
+  const [queue]=await db.query("SELECT count(*) FILTER(WHERE state='pending')::integer AS pending,count(*) FILTER(WHERE state='dead')::integer AS dead,min(created_at) FILTER(WHERE state='pending') AS oldest_pending_at,max(sent_at) AS last_sent_at FROM meta_event_outbox");
+  const jobs=await db.query('SELECT name,next_run_at,last_started_at,last_completed_at,last_error_code FROM integration_jobs ORDER BY name');
+  return {orders,events,queue,jobs};
  }
- return {create,receipt,getReferences,refreshReferences,flushEvents,syncOrders,reconcilePending,metrics};
+ const maintenance=createMaintenance({db,refreshReferences,syncOrders,flushEvents});
+ return {create,receipt,getReferences,refreshReferences,flushEvents,syncOrders,reconcilePending,metrics,runMaintenance:maintenance.run};
 }
 module.exports={createOrderService};

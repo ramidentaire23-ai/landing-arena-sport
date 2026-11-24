@@ -3,9 +3,8 @@
  const storageKey='arena_attribution_v1',params=new URLSearchParams(location.search);
  function readCookie(name){return document.cookie.split('; ').find(p=>p.startsWith(name+'='))?.slice(name.length+1)||'';}
  function read(){try{return JSON.parse(localStorage.getItem(storageKey)||'{}');}catch{return {};}}
- const saved=read();
  const keys=['campaign_id','adset_id','ad_id','utm_source','utm_medium','utm_campaign','utm_content','placement','fbclid'];
- if(params.has('fbclid')||params.has('ad_id')){
+ if(keys.some(key=>params.has(key))){
   const next={observedAt:Date.now()};
   keys.forEach(k=>{if(params.get(k))next[k]=params.get(k).slice(0,500);});
   if(next.fbclid){

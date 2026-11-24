@@ -25,3 +25,13 @@ CREATE TABLE IF NOT EXISTS noest_reference_cache (
 );
 
 ALTER TABLE orders ADD COLUMN IF NOT EXISTS dispatched_at timestamptz;
+
+CREATE TABLE IF NOT EXISTS integration_jobs (
+ name text PRIMARY KEY,
+ lease_token uuid,
+ lease_until timestamptz,
+ next_run_at timestamptz NOT NULL DEFAULT now(),
+ last_started_at timestamptz,
+ last_completed_at timestamptz,
+ last_error_code text
+);
